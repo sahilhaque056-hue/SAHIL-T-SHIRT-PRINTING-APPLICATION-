@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Personalized Gift | SAHIL T SHIRT PRINTING</title>
+
+<style>
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+  font-family:Arial,Helvetica,sans-serif;
+}
+
+body{
+  background:#f7f7fb;
+  color:#222;
+  padding-bottom:90px;
+}
+
+/* HEADER */
+.header{
+  height:64px;
+  background:#fff;
+  display:flex;
+  align-items:center;
+  gap:12px;
+  padding:0 15px;
+  box-shadow:0 2px 12px rgba(0,0,0,.08);
+  position:sticky;
+  top:0;
+  z-index:100;
+}
+
+.back{
+  width:40px;
+  height:40px;
+  border:0;
+  border-radius:12px;
+  background:#f1eaff;
+  color:#5b21b6;
+  font-size:21px;
+  cursor:pointer;
+}
+
+.headerTitle{
+  color:#4c1d95;
+  font-size:17px;
+  font-weight:bold;
+}
+
+/* MAIN */
+.container{
+  padding:15px;
+  max-width:600px;
+  margin:auto;
+}
+
+/* IMAGE */
+.previewBox{
+  background:#fff;
+  border-radius:22px;
+  padding:15px;
+  box-shadow:0 5px 18px rgba(0,0,0,.08);
+  text-align:center;
+}
+
+.productImage{
+  width:100%;
+  height:260px;
+  object-fit:contain;
+  border-radius:18px;
+  background:#f5f5f5;
+}
+
+/* TITLE */
+.titleBox{
+  margin:18px 2px;
+}
+
+.titleBox h1{
+  font-size:24px;
+  color:#35126b;
+}
+
+.titleBox p{
+  margin-top:6px;
+  color:#777;
+  font-size:13px;
+}
+
+/* CARD */
+.card{
+  background:#fff;
+  padding:17px;
+  border-radius:20px;
+  margin-top:14px;
+  box-shadow:0 4px 16px rgba(0,0,0,.07);
+}
+
+.label{
+  display:block;
+  font-size:15px;
+  font-weight:bold;
+  margin-bottom:11px;
+  color:#35126b;
+}
+
+/* GIFT TYPE */
+.giftTypes{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:10px;
+}
+
+.giftBtn{
+  padding:14px 8px;
+  border:1px solid #ddd;
+  background:#fff;
+  border-radius:12px;
+  font-weight:bold;
+  color:#444;
+  cursor:pointer;
+}
+
+.giftBtn.active{
+  background:#6c2bd9;
+  color:#fff;
+  border-color:#6c2bd9;
+}
+
+/* GIFT OPTION */
+.optionList{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+
+.option{
+  border:1px solid #ddd;
+  padding:13px;
+  border-radius:12px;
+  display:flex;
+  align-items:center;
+  gap:10px;
+  cursor:pointer;
+}
+
+.option input{
+  width:18px;
+  height:18px;
+  accent-color:#6c2bd9;
+}
+
+/* UPLOAD */
+.uploadBox{
+  border:2px dashed #9b70df;
+  background:#faf7ff;
+  border-radius:15px;
+  padding:20px 12px;
+  text-align:center;
+}
+
+.uploadIcon{
+  font-size:35px;
+}
+
+.uploadBox p{
+  margin:7px 0 12px;
+  font-size:13px;
+  color:#777;
+}
+
+.uploadBtn{
+  display:inline-block;
+  background:#6c2bd9;
+  color:#fff;
+  padding:10px 17px;
+  border-radius:10px;
+  font-size:13px;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+#fileInput{
+  display:none;
+}
+
+.fileName{
+  margin-top:10px;
+  font-size:12px;
+  color:#555;
+  word-break:break-word;
+}
+
+#designPreview{
+  display:none;
+  margin-top:12px;
+  text-align:center;
+}
+
+#designPreview img{
+  max-width:100%;
+  max-height:180px;
+  border-radius:12px;
+  border:1px solid #ddd;
+  object-fit:contain;
+}
+
+/* INPUT */
+.input{
+  width:100%;
+  padding:13px;
+  border:1px solid #ddd;
+  border-radius:12px;
+  outline:none;
+  font-size:14px;
+}
+
+textarea.input{
+  resize:none;
+  height:90px;
+}
+
+/* QUANTITY */
+.quantity{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:22px;
+}
+
+.qtyBtn{
+  width:42px;
+  height:42px;
+  border:0;
+  border-radius:12px;
+  background:#6c2bd9;
+  color:#fff;
+  font-size:23px;
+  cursor:pointer;
+}
+
+.qtyNumber{
+  font-size:20px;
+  font-weight:bold;
+  min-width:25px;
+  text-align:center;
+}
+
+/* PRICE */
+.priceCard{
+  background:linear-gradient(135deg,#35126b,#6c2bd9);
+  color:#fff;
+  padding:18px;
+  border-radius:18px;
+  margin-top:15px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+#totalPrice{
+  color:#ffd928;
+  font-size:24px;
+  font-weight:bold;
+}
+
+/* BOTTOM */
+.bottomBar{
+  position:fixed;
+  left:0;
+  right:0;
+  bottom:0;
+  background:#fff;
+  padding:12px 15px;
+  box-shadow:0 -3px 15px rgba(0,0,0,.12);
+  z-index:200;
+}
+
+.addCart{
+  width:100%;
+  max-width:600px;
+  display:block;
+  margin:auto;
+  border:0;
+  background:#ffd928;
+  color:#35126b;
+  padding:15px;
+  border-radius:14px;
+  font-size:16px;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+.addCart:active{
+  transform:scale(.98);
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header class="header">
+
+  <
