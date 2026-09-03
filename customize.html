@@ -1,650 +1,963 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
 <meta charset="UTF-8">
-
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Customize T-Shirt | SAHIL T SHIRT PRINTING</title>
 
 <style>
 
 *{
-box-sizing:border-box;
-margin:0;
-padding:0;
-font-family:Arial,sans-serif;
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial,Helvetica,sans-serif;
 }
 
 body{
-background:#f5f5f5;
-color:#111;
-padding-bottom:30px;
+  background:#f5f6f8;
+  color:#222;
+  padding-bottom:30px;
 }
 
-header{
-background:#111;
-color:white;
-padding:17px;
-position:sticky;
-top:0;
-z-index:10;
-}
+/* HEADER */
 
 .header{
-display:flex;
-align-items:center;
-gap:12px;
+  background:#ffffff;
+  padding:15px;
+  display:flex;
+  align-items:center;
+  gap:12px;
+  position:sticky;
+  top:0;
+  z-index:100;
+  box-shadow:0 2px 10px rgba(0,0,0,0.08);
 }
 
 .back{
-font-size:25px;
-cursor:pointer;
+  width:40px;
+  height:40px;
+  border-radius:50%;
+  border:none;
+  background:#f1f2f4;
+  font-size:20px;
+  cursor:pointer;
 }
 
-.logo{
-font-size:18px;
-font-weight:bold;
+.shop-name{
+  font-size:17px;
+  font-weight:800;
 }
+
+.subtitle{
+  font-size:11px;
+  color:#777;
+  margin-top:2px;
+}
+
+/* MAIN */
 
 .container{
-max-width:650px;
-margin:auto;
-padding:15px;
+  max-width:600px;
+  margin:auto;
+  padding:15px;
 }
 
-.card{
-background:white;
-border-radius:16px;
-padding:17px;
-margin-bottom:15px;
-box-shadow:0 2px 10px rgba(0,0,0,.06);
+/* PRODUCT PREVIEW */
+
+.preview-card{
+  background:#fff;
+  border-radius:18px;
+  padding:20px;
+  text-align:center;
+  box-shadow:0 3px 15px rgba(0,0,0,0.07);
+  margin-bottom:15px;
 }
 
-.card h2{
-margin-bottom:15px;
-font-size:22px;
+.preview-title{
+  font-size:18px;
+  font-weight:800;
+  margin-bottom:15px;
 }
 
-.card h3{
-margin-bottom:13px;
-font-size:17px;
+.tshirt-area{
+  width:100%;
+  min-height:260px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background:#f7f7f8;
+  border-radius:15px;
+  position:relative;
+  overflow:hidden;
 }
 
-/* TSHIRT PREVIEW */
+/* T-SHIRT */
 
-.preview{
-height:360px;
-background:#ededed;
-border-radius:15px;
-display:flex;
-align-items:center;
-justify-content:center;
-overflow:hidden;
+.tshirt{
+  font-size:180px;
+  line-height:1;
+  transition:0.3s;
 }
 
-.shirt-box{
-position:relative;
-width:260px;
-height:300px;
-display:flex;
-align-items:center;
-justify-content:center;
-}
+/* DESIGN PREVIEW */
 
-.shirt{
-font-size:210px;
-line-height:1;
-transition:.3s;
-filter:drop-shadow(0 8px 8px rgba(0,0,0,.15));
-}
-
-.design{
-position:absolute;
-width:80px;
-height:80px;
-object-fit:contain;
-display:none;
-left:50%;
-top:50%;
-transform:translate(-50%,-50%);
-}
-
-/* COLORS */
-
-.colors{
-display:flex;
-gap:13px;
-flex-wrap:wrap;
-}
-
-.color{
-width:45px;
-height:45px;
-border-radius:50%;
-border:3px solid white;
-box-shadow:0 0 0 1px #bbb;
-cursor:pointer;
-}
-
-.color.selected{
-box-shadow:0 0 0 3px #111;
-}
-
-.black{background:#111;}
-.white{background:#fff;}
-.red{background:#e53935;}
-.blue{background:#1976d2;}
-.green{background:#2e7d32;}
-.yellow{background:#fdd835;}
-.pink{background:#e91e63;}
-
-/* INPUTS */
-
-label{
-display:block;
-font-weight:bold;
-margin:17px 0 8px;
-}
-
-select,
-input[type="number"],
-input[type="file"]{
-width:100%;
-padding:13px;
-border:1px solid #ccc;
-border-radius:9px;
-background:white;
-font-size:15px;
+.design-preview{
+  position:absolute;
+  width:75px;
+  height:75px;
+  object-fit:contain;
+  left:50%;
+  top:50%;
+  transform:translate(-50%,-45%);
+  display:none;
+  border-radius:5px;
 }
 
 /* PRICE */
 
 .price-box{
-background:#f5f5f5;
-border-radius:12px;
-padding:16px;
-margin-top:18px;
+  margin-top:15px;
+  background:#fff5e8;
+  border-radius:12px;
+  padding:14px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
 }
 
-.price-line{
-display:flex;
-justify-content:space-between;
-margin-bottom:8px;
-font-size:14px;
+.price-label{
+  color:#666;
+  font-size:13px;
 }
 
-.total{
-font-size:22px;
-font-weight:bold;
-border-top:1px solid #ddd;
-padding-top:10px;
-margin-top:8px;
+.price{
+  font-size:23px;
+  font-weight:800;
+  color:#ff5a00;
 }
 
-/* BUTTON */
+/* SECTION */
 
-.cart-btn{
-width:100%;
-border:0;
-background:#111;
-color:white;
-padding:15px;
-border-radius:10px;
-font-size:17px;
-font-weight:bold;
-margin-top:15px;
-cursor:pointer;
+.section{
+  background:#fff;
+  border-radius:18px;
+  padding:18px;
+  margin-bottom:15px;
+  box-shadow:0 3px 15px rgba(0,0,0,0.06);
 }
 
-.home-btn{
-width:100%;
-border:1px solid #ccc;
-background:white;
-color:#111;
-padding:13px;
-border-radius:10px;
-font-size:15px;
-margin-top:10px;
-cursor:pointer;
+.section-title{
+  font-size:16px;
+  font-weight:800;
+  margin-bottom:14px;
 }
 
-.success{
-display:none;
-background:#e8f5e9;
-color:#1b5e20;
-padding:13px;
-border-radius:9px;
-margin-top:12px;
-text-align:center;
-font-weight:bold;
+/* COLORS */
+
+.colors{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+}
+
+.color-option{
+  width:45px;
+  height:45px;
+  border-radius:50%;
+  border:3px solid transparent;
+  cursor:pointer;
+  box-shadow:0 2px 7px rgba(0,0,0,0.15);
+}
+
+.color-option.active{
+  border:3px solid #111;
+  transform:scale(1.08);
+}
+
+.black{background:#111;}
+.white{background:#fff;border:1px solid #ddd;}
+.red{background:#e53935;}
+.blue{background:#1976d2;}
+.green{background:#2e7d32;}
+.yellow{background:#fbc02d;}
+.pink{background:#ec407a;}
+
+/* COLOR NAME */
+
+.selected-color{
+  margin-top:12px;
+  font-size:13px;
+  color:#666;
+}
+
+.selected-color span{
+  font-weight:700;
+  color:#222;
+}
+
+/* SIZE */
+
+.sizes{
+  display:flex;
+  gap:9px;
+  flex-wrap:wrap;
+}
+
+.size{
+  min-width:55px;
+  padding:12px 15px;
+  border:1px solid #ddd;
+  background:#fff;
+  border-radius:10px;
+  font-weight:700;
+  cursor:pointer;
+  text-align:center;
+}
+
+.size.active{
+  background:#111;
+  color:#fff;
+  border-color:#111;
+}
+
+/* QUANTITY */
+
+.quantity-box{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.qty-control{
+  display:flex;
+  align-items:center;
+  border:1px solid #ddd;
+  border-radius:12px;
+  overflow:hidden;
+}
+
+.qty-btn{
+  width:45px;
+  height:45px;
+  border:none;
+  background:#f3f3f3;
+  font-size:22px;
+  cursor:pointer;
+}
+
+.qty-number{
+  width:50px;
+  text-align:center;
+  font-weight:800;
+}
+
+/* UPLOAD */
+
+.upload-box{
+  border:2px dashed #ddd;
+  border-radius:14px;
+  padding:20px;
+  text-align:center;
+  background:#fafafa;
+}
+
+.upload-icon{
+  font-size:35px;
+  margin-bottom:8px;
+}
+
+.upload-text{
+  font-size:14px;
+  font-weight:700;
+}
+
+.upload-subtext{
+  font-size:11px;
+  color:#888;
+  margin-top:5px;
+}
+
+.upload-btn{
+  margin-top:14px;
+  display:inline-block;
+  background:#111;
+  color:#fff;
+  padding:11px 18px;
+  border-radius:9px;
+  font-size:13px;
+  font-weight:700;
+  cursor:pointer;
+}
+
+#designUpload{
+  display:none;
+}
+
+.file-name{
+  margin-top:10px;
+  font-size:12px;
+  color:#555;
+}
+
+/* IMAGE PREVIEW */
+
+.upload-preview{
+  margin-top:15px;
+  display:none;
+}
+
+.upload-preview img{
+  width:140px;
+  height:140px;
+  object-fit:contain;
+  border-radius:12px;
+  border:1px solid #ddd;
+  background:#fff;
+  padding:5px;
+}
+
+/* ADD BUTTON */
+
+.bottom-area{
+  position:sticky;
+  bottom:0;
+  background:rgba(245,246,248,0.95);
+  padding:12px 15px;
+  backdrop-filter:blur(8px);
+}
+
+.add-cart{
+  width:100%;
+  height:55px;
+  border:none;
+  border-radius:14px;
+  background:#ff5a00;
+  color:#fff;
+  font-size:16px;
+  font-weight:800;
+  cursor:pointer;
+  box-shadow:0 5px 15px rgba(255,90,0,0.25);
+}
+
+.add-cart:active{
+  transform:scale(0.98);
 }
 
 .note{
-font-size:12px;
-color:#777;
-margin-top:8px;
-line-height:1.5;
+  text-align:center;
+  font-size:11px;
+  color:#888;
+  margin-top:8px;
+}
+
+/* MOBILE */
+
+@media(max-width:400px){
+
+  .tshirt{
+    font-size:150px;
+  }
+
+  .design-preview{
+    width:65px;
+    height:65px;
+  }
+
 }
 
 </style>
-
 </head>
-
 
 <body>
 
-
-<header>
+<!-- HEADER -->
 
 <div class="header">
 
-<div
-class="back"
-onclick="goHome()">
-←
-</div>
+  <button class="back" onclick="history.back()">←</button>
 
-<div class="logo">
-SAHIL T SHIRT PRINTING
-</div>
+  <div>
+    <div class="shop-name">SAHIL T SHIRT PRINTING</div>
+    <div class="subtitle">Customize Your T-Shirt</div>
+  </div>
 
 </div>
-
-</header>
 
 
 <div class="container">
 
+  <!-- PREVIEW -->
 
-<!-- PREVIEW -->
+  <div class="preview-card">
 
-<div class="card">
+    <div class="preview-title">
+      👕 Your T-Shirt Preview
+    </div>
 
-<h2>👕 Design Your T-Shirt</h2>
+    <div class="tshirt-area">
 
-<div class="preview">
+      <div id="tshirt" class="tshirt">👕</div>
 
-<div class="shirt-box">
+      <img
+        id="designPreview"
+        class="design-preview"
+        alt="Design Preview"
+      >
 
-<div
-class="shirt"
-id="shirt">
-👕
+    </div>
+
+    <div class="price-box">
+
+      <div>
+        <div class="price-label">Total Price</div>
+        <div style="font-size:12px;color:#888;">
+          ₹299 × quantity
+        </div>
+      </div>
+
+      <div class="price" id="totalPrice">
+        ₹299
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- COLOUR -->
+
+  <div class="section">
+
+    <div class="section-title">
+      🎨 Choose T-Shirt Colour
+    </div>
+
+    <div class="colors">
+
+      <button
+        class="color-option black active"
+        data-color="Black"
+        onclick="selectColor(this,'Black')">
+      </button>
+
+      <button
+        class="color-option white"
+        data-color="White"
+        onclick="selectColor(this,'White')">
+      </button>
+
+      <button
+        class="color-option red"
+        data-color="Red"
+        onclick="selectColor(this,'Red')">
+      </button>
+
+      <button
+        class="color-option blue"
+        data-color="Blue"
+        onclick="selectColor(this,'Blue')">
+      </button>
+
+      <button
+        class="color-option green"
+        data-color="Green"
+        onclick="selectColor(this,'Green')">
+      </button>
+
+      <button
+        class="color-option yellow"
+        data-color="Yellow"
+        onclick="selectColor(this,'Yellow')">
+      </button>
+
+      <button
+        class="color-option pink"
+        data-color="Pink"
+        onclick="selectColor(this,'Pink')">
+      </button>
+
+    </div>
+
+    <div class="selected-color">
+      Selected Colour:
+      <span id="selectedColor">Black</span>
+    </div>
+
+  </div>
+
+
+  <!-- SIZE -->
+
+  <div class="section">
+
+    <div class="section-title">
+      📏 Choose Size
+    </div>
+
+    <div class="sizes">
+
+      <button class="size" onclick="selectSize(this,'S')">
+        S
+      </button>
+
+      <button class="size active" onclick="selectSize(this,'M')">
+        M
+      </button>
+
+      <button class="size" onclick="selectSize(this,'L')">
+        L
+      </button>
+
+      <button class="size" onclick="selectSize(this,'XL')">
+        XL
+      </button>
+
+      <button class="size" onclick="selectSize(this,'XXL')">
+        XXL
+      </button>
+
+    </div>
+
+    <div class="selected-color">
+      Selected Size:
+      <span id="selectedSize">M</span>
+    </div>
+
+  </div>
+
+
+  <!-- QUANTITY -->
+
+  <div class="section">
+
+    <div class="quantity-box">
+
+      <div>
+        <div class="section-title" style="margin:0;">
+          🔢 Quantity
+        </div>
+
+        <div style="font-size:12px;color:#888;margin-top:4px;">
+          Number of T-Shirts
+        </div>
+      </div>
+
+      <div class="qty-control">
+
+        <button
+          class="qty-btn"
+          onclick="changeQuantity(-1)">
+          −
+        </button>
+
+        <div
+          class="qty-number"
+          id="quantity">
+          1
+        </div>
+
+        <button
+          class="qty-btn"
+          onclick="changeQuantity(1)">
+          +
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- DESIGN UPLOAD -->
+
+  <div class="section">
+
+    <div class="section-title">
+      🖼️ Upload Your Design
+    </div>
+
+    <div class="upload-box">
+
+      <div class="upload-icon">
+        🎨
+      </div>
+
+      <div class="upload-text">
+        Add your printing design
+      </div>
+
+      <div class="upload-subtext">
+        JPG, PNG image upload karein
+      </div>
+
+      <label
+        for="designUpload"
+        class="upload-btn">
+        📁 Choose Design
+      </label>
+
+      <input
+        type="file"
+        id="designUpload"
+        accept="image/*"
+        onchange="uploadDesign(event)"
+      >
+
+      <div
+        class="file-name"
+        id="fileName">
+      </div>
+
+      <div
+        class="upload-preview"
+        id="uploadPreview">
+
+        <img
+          id="uploadedImage"
+          alt="Uploaded Design">
+
+      </div>
+
+    </div>
+
+  </div>
+
 </div>
 
-<img
-id="design"
-class="design"
-alt="Your Design">
 
-</div>
+<!-- BOTTOM BUTTON -->
 
-</div>
+<div class="bottom-area">
 
-<p class="note">
-Aapka uploaded design T-Shirt ke upar preview mein dikhega.
-</p>
+  <button
+    class="add-cart"
+    onclick="addToCart()">
 
-</div>
+    🛒 Add to Cart — ₹<span id="buttonPrice">299</span>
 
+  </button>
 
-<!-- COLOUR -->
-
-<div class="card">
-
-<h3>🎨 1. Choose T-Shirt Colour</h3>
-
-<div class="colors">
-
-<button
-class="color black selected"
-onclick="changeColor('black',this)">
-</button>
-
-<button
-class="color white"
-onclick="changeColor('white',this)">
-</button>
-
-<button
-class="color red"
-onclick="changeColor('red',this)">
-</button>
-
-<button
-class="color blue"
-onclick="changeColor('blue',this)">
-</button>
-
-<button
-class="color green"
-onclick="changeColor('green',this)">
-</button>
-
-<button
-class="color yellow"
-onclick="changeColor('yellow',this)">
-</button>
-
-<button
-class="color pink"
-onclick="changeColor('pink',this)">
-</button>
-
-</div>
-
-</div>
-
-
-<!-- SIZE -->
-
-<div class="card">
-
-<h3>📏 2. Choose Size</h3>
-
-<select id="size"
-onchange="updateDetails()">
-
-<option value="S">
-Small (S)
-</option>
-
-<option value="M">
-Medium (M)
-</option>
-
-<option value="L">
-Large (L)
-</option>
-
-<option value="XL">
-Extra Large (XL)
-</option>
-
-<option value="XXL">
-XXL
-</option>
-
-</select>
-
-</div>
-
-
-<!-- QUANTITY -->
-
-<div class="card">
-
-<h3>🔢 3. Quantity</h3>
-
-<input
-type="number"
-id="quantity"
-value="1"
-min="1"
-oninput="calculatePrice()">
-
-</div>
-
-
-<!-- DESIGN -->
-
-<div class="card">
-
-<h3>📸 4. Upload Your Design</h3>
-
-<input
-type="file"
-id="file"
-accept="image/*"
-onchange="uploadDesign(event)">
-
-<p class="note">
-JPG, PNG ya other image upload kar sakte hain.
-</p>
-
-</div>
-
-
-<!-- PRICE -->
-
-<div class="card">
-
-<h3>💰 Order Summary</h3>
-
-<div class="price-box">
-
-<div class="price-line">
-
-<span>Product</span>
-
-<span>Custom T-Shirt</span>
-
-</div>
-
-<div class="price-line">
-
-<span>Price</span>
-
-<span>₹299</span>
-
-</div>
-
-<div class="price-line">
-
-<span>Quantity</span>
-
-<span id="summaryQuantity">
-1
-</span>
-
-</div>
-
-<div class="price-line">
-
-<span>Size</span>
-
-<span id="summarySize">
-S
-</span>
-
-</div>
-
-<div class="total">
-
-Total:
-₹<span id="total">
-299
-</span>
-
-</div>
-
-</div>
-
-
-<button
-class="cart-btn"
-onclick="addToCart()">
-
-🛒 Add to Cart
-
-</button>
-
-
-<div
-id="success"
-class="success">
-
-✅ T-Shirt cart mein add ho gayi!
-
-</div>
-
-</div>
-
-
-<button
-class="home-btn"
-onclick="goHome()">
-
-🏠 Back to Home
-
-</button>
-
+  <div class="note">
+    🔒 Your design is saved securely on this device
+  </div>
 
 </div>
 
 
 <script>
 
+const PRICE = 299;
 
-let selectedColor="black";
-
-const price=299;
-
-
-/* COLOUR */
-
-function changeColor(color,button){
-
-selectedColor=color;
-
-document
-.querySelectorAll(".color")
-.forEach(function(item){
-
-item.classList.remove("selected");
-
-});
-
-button.classList.add("selected");
-
-}
+let selectedColor = "Black";
+let selectedSize = "M";
+let quantity = 1;
 
 
-/* SIZE */
+/* =========================
+   COLOUR SELECT
+========================= */
 
-function updateDetails(){
+function selectColor(button,color){
 
-const size=
-document.getElementById("size").value;
+  document
+    .querySelectorAll(".color-option")
+    .forEach(function(item){
+      item.classList.remove("active");
+    });
 
-document
-.getElementById("summarySize")
-.innerText=size;
+  button.classList.add("active");
+
+  selectedColor = color;
+
+  document.getElementById("selectedColor").textContent = color;
+
+  updateTshirtColor();
 
 }
 
 
-/* PRICE */
+/* =========================
+   T-SHIRT COLOUR PREVIEW
+========================= */
 
-function calculatePrice(){
+function updateTshirtColor(){
 
-let quantity=
-Number(
-document.getElementById("quantity").value
-);
+  const tshirt = document.getElementById("tshirt");
 
-if(quantity<1){
+  const colorMap = {
 
-quantity=1;
+    Black:"#111",
 
-document
-.getElementById("quantity")
-.value=1;
+    White:"#ffffff",
+
+    Red:"#e53935",
+
+    Blue:"#1976d2",
+
+    Green:"#2e7d32",
+
+    Yellow:"#fbc02d",
+
+    Pink:"#ec407a"
+
+  };
+
+  /*
+    Emoji ka actual colour browser control nahi
+    karta, isliye selected colour ke according
+    background visual diya ja raha hai.
+  */
+
+  tshirt.style.filter = "none";
+
+  tshirt.style.textShadow =
+    "0 8px 20px rgba(0,0,0,0.15)";
+
+  document.querySelector(".tshirt-area").style.background =
+    "linear-gradient(135deg,#f7f7f8,#eeeeee)";
 
 }
 
-const total=price*quantity;
 
-document
-.getElementById("total")
-.innerText=total;
+/* =========================
+   SIZE SELECT
+========================= */
 
-document
-.getElementById("summaryQuantity")
-.innerText=quantity;
+function selectSize(button,size){
+
+  document
+    .querySelectorAll(".size")
+    .forEach(function(item){
+      item.classList.remove("active");
+    });
+
+  button.classList.add("active");
+
+  selectedSize = size;
+
+  document.getElementById("selectedSize").textContent = size;
 
 }
 
 
-/* DESIGN UPLOAD */
+/* =========================
+   QUANTITY
+========================= */
+
+function changeQuantity(change){
+
+  quantity += change;
+
+  if(quantity < 1){
+    quantity = 1;
+  }
+
+  if(quantity > 20){
+    quantity = 20;
+  }
+
+  document.getElementById("quantity").textContent = quantity;
+
+  updatePrice();
+
+}
+
+
+/* =========================
+   PRICE
+========================= */
+
+function updatePrice(){
+
+  const total = PRICE * quantity;
+
+  document.getElementById("totalPrice").textContent =
+    "₹" + total;
+
+  document.getElementById("buttonPrice").textContent =
+    total;
+
+}
+
+
+/* =========================
+   DESIGN UPLOAD
+========================= */
 
 function uploadDesign(event){
 
-const file=
-event.target.files[0];
+  const file = event.target.files[0];
 
-if(!file){
+  if(!file){
+    return;
+  }
 
-return;
+  /*
+    Maximum 5MB
+  */
+
+  if(file.size > 5 * 1024 * 1024){
+
+    alert("Image size 5MB se kam honi chahiye.");
+
+    event.target.value = "";
+
+    return;
+  }
+
+
+  /*
+    Sirf image
+  */
+
+  if(!file.type.startsWith("image/")){
+
+    alert("Please JPG ya PNG image select karein.");
+
+    event.target.value = "";
+
+    return;
+  }
+
+
+  const reader = new FileReader();
+
+
+  reader.onload = function(e){
+
+    const imageData = e.target.result;
+
+
+    /* Main preview */
+
+    const preview =
+      document.getElementById("designPreview");
+
+    preview.src = imageData;
+
+    preview.style.display = "block";
+
+
+    /* Upload preview */
+
+    const uploadedImage =
+      document.getElementById("uploadedImage");
+
+    uploadedImage.src = imageData;
+
+    document
+      .getElementById("uploadPreview")
+      .style.display = "block";
+
+
+    /* File name */
+
+    document
+      .getElementById("fileName")
+      .textContent =
+      "Selected: " + file.name;
+
+
+    /*
+      Save design in browser
+    */
+
+    try{
+
+      localStorage.setItem(
+        "customerDesign",
+        imageData
+      );
+
+    }catch(error){
+
+      alert(
+        "Image bahut badi hai. Chhoti image upload karein."
+      );
+
+      return;
+    }
+
+  };
+
+
+  reader.readAsDataURL(file);
 
 }
 
-const image=
-document.getElementById("design");
 
-image.src=
-URL.createObjectURL(file);
+/* =========================
+   RESTORE PREVIOUS DESIGN
+========================= */
 
-image.style.display="block";
+function restoreDesign(){
+
+  const savedDesign =
+    localStorage.getItem("customerDesign");
+
+  if(!savedDesign){
+    return;
+  }
+
+  document.getElementById("designPreview").src =
+    savedDesign;
+
+  document.getElementById("designPreview").style.display =
+    "block";
+
+  document.getElementById("uploadedImage").src =
+    savedDesign;
+
+  document.getElementById("uploadPreview").style.display =
+    "block";
+
+  document.getElementById("fileName").textContent =
+    "Previously selected design";
 
 }
 
 
-/* ADD TO CART */
+/* =========================
+   ADD TO CART
+========================= */
 
 function addToCart(){
 
-const size=
-document.getElementById("size").value;
-
-const quantity=
-Number(
-document.getElementById("quantity").value
-);
-
-const total=price*quantity;
-
-const item={
-
-product:"Custom T-Shirt",
-
-color:selectedColor,
-
-size:size,
-
-quantity:quantity,
-
-price:total
-
-};
-
-localStorage.setItem(
-"cartItem",
-JSON.stringify(item)
-);
-
-document
-.getElementById("success")
-.style.display="block";
-
-}
+  const design =
+    localStorage.getItem("customerDesign") || "";
 
 
-/* HOME */
-
-function goHome(){
-
-window.location.href="index.html";
-
-}
-
-</script>
+  const total =
+    PRICE * quantity;
 
 
-</body>
+  const item = {
 
-</html>
+    product: "Custom T-Shirt",
+
+    color: selectedColor,
+
+    size: selectedSize,
+
+    quantity: quantity,
+
+    price: total,
+
+    unitPrice: PRICE,
+
+    design: design,
+
+    createdAt: new Date().toISOString()
+
+  };
+
+
+  /*
+    Save complete order item
+  */
+
+  localStorage.setItem(
+    "
