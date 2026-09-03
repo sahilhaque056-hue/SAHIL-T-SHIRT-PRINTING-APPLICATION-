@@ -1,1 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>My Cart - SAHIL T SHIRT PRINTING</title>
+
+<style>
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+body{
+  font-family:Arial,sans-serif;
+  background:#f5f5f5;
+  color:#222;
+  padding-bottom:110px;
+}
+
+/* HEADER */
+
+.header{
+  background:#fff;
+  padding:14px 16px;
+  display:flex;
+  align-items:center;
+  gap:12px;
+  position:sticky;
+  top:0;
+  z-index:10;
+  box-shadow:0 2px 10px rgba(0,0,0,.08);
+}
+
+.back{
+  width:40px;
+  height:40px;
+  border:0;
+  border-radius:12px;
+  background:#f2f2f2;
+  font-size:22px;
+  cursor:pointer;
+}
+
+.logo{
+  width:42px;
+  height:42px;
+  border-radius:12px;
+  background:#ff7a00;
+  color:#fff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:800;
+}
+
+.shop-name{
+  font-size:17px;
+  font-weight:800;
+}
+
+.shop-sub{
+  font-size:11px;
+  color:#777;
+  margin-top:3px;
+}
+
+/* CONTAINER */
+
+.container{
+  max-width:600px;
+  margin:auto;
+  padding:15px;
+}
+
+/* TITLE */
+
+.page-title{
+  font-size:24px;
+  font-weight:800;
+  margin:8px 0 15px;
+}
+
+.item-count{
+  color:#777;
+  font-size:13px;
+  margin-top:4px;
+}
+
+/* CART ITEM */
+
+.cart-card{
+  background:#fff;
+  border-radius:18px;
+  padding:14px;
+  display:flex;
+  gap:14px;
+  box-shadow:0 2px 12px rgba(0,0,0,.07);
+}
+
+.product-image{
+  width:105px;
+  height:105px;
+  border-radius:14px;
+  background:#f7f7f7;
+  overflow:hidden;
+  flex-shrink:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.product-image img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+}
+
+.product-info{
+  flex:1;
+  min-width:0;
+}
+
+.product-name{
+  font-size:16px;
+  font-weight:800;
+  line-height:1.3;
+}
+
+.details{
+  font-size:12px;
+  color:#777;
+  margin-top:6px;
+  line-height:1.6;
+}
+
+.price{
+  color:#e85d00;
+  font-size:18px;
+  font-weight:800;
+  margin-top:8px;
+}
+
+/* QUANTITY */
+
+.bottom-row{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  margin-top:10px;
+}
+
+.qty-box{
+  display:flex;
+  align-items:center;
+  border:1px solid #ddd;
+  border-radius:10px;
+  overflow:hidden;
+}
+
+.qty-btn{
+  width:34px;
+  height:34px;
+  border:0;
+  background:#fff;
+  font-size:20px;
+  cursor:pointer;
+}
+
+.qty-number{
+  width:32px;
+  text-align:center;
+  font-size:14px;
+  font-weight:800;
+}
+
+/* REMOVE */
+
+.remove{
+  border:0;
+  background:#fff0ed;
+  color:#d94c2b;
+  padding:8px 11px;
+  border-radius:9px;
+  font-size:12px;
+  font-weight:700;
+  cursor:pointer;
+}
+
+/* SUMMARY */
+
+.summary{
+  background:#fff;
+  margin-top:15px;
+  border-radius:18px;
+  padding:18px;
+  box-shadow:0 2px 12px rgba(0,0,0,.06);
+}
+
+.summary-title{
+  font-size:17px;
+  font-weight:800;
+  margin-bottom:14px;
+}
+
+.row{
+  display:flex;
+  justify-content:space-between;
+  margin:10px 0;
+  font-size:14px;
+}
+
+.row.total-row{
+  border-top:1px solid #eee;
+  padding-top:14px;
+  margin-top:14px;
+}
+
+.total-label{
+  font-size:17px;
+  font-weight:800;
+}
+
+.total-price{
+  color:#e85d00;
+  font-size:23px;
+  font-weight:800;
+}
+
+/* EMPTY CART */
+
+.empty{
+  display:none;
+  background:#fff;
+  border-radius:18px;
+  padding:45px 20px;
+  text-align:center;
+  box-shadow:0 2px 12px rgba(0,0,0,.06);
+}
+
+.empty-icon{
+  font-size:60px;
+  margin-bottom:15px;
+}
+
+.empty h2{
+  font-size:21px;
+  margin-bottom:8px;
+}
+
+.empty p{
+  color:#777;
+  font-size:14px;
+  line-height:1.5;
+}
+
+.shop-btn{
+  margin-top:20px;
+  border:0;
+  background:#ff7a00;
+  color:#fff;
+  padding:13px 22px;
+  border-radius:12px;
+  font-weight:800;
+  font-size:15px;
+  cursor:pointer;
+}
+
+/* CHECKOUT BUTTON */
+
+.checkout{
+  position:fixed;
+  left:14px;
+  right:14px;
+  bottom:14px;
+  max-width:572px;
+  margin:auto;
+  height:58px;
+  border:0;
+  border-radius:16px;
+  background:#ff7a00;
+  color:#fff;
+  font-size:17px;
+  font-weight:800;
+  box-shadow:0 5px 20px rgba(255,122,0,.35);
+  cursor:pointer;
+  z-index:20;
+}
+
+.checkout:active{
+  transform:scale(.98);
+}
+
+.checkout small{
+  font-size:11px;
+  opacity:.9;
+  margin-left:5px;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:400px){
+
+  .
