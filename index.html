@@ -15,7 +15,7 @@
     }
 
     body {
-      background: #f7f7f7;
+      background: #f6f6f6;
       color: #171717;
       padding-bottom: 80px;
     }
@@ -30,14 +30,13 @@
 
     .top-header {
       display: flex;
-      align-items: center;
       justify-content: space-between;
+      align-items: center;
     }
 
     .logo {
       font-size: 20px;
       font-weight: 800;
-      letter-spacing: .3px;
     }
 
     .cart-icon {
@@ -45,7 +44,7 @@
     }
 
     .search-box {
-      margin-top: 18px;
+      margin-top: 17px;
       background: white;
       border-radius: 12px;
       padding: 13px 15px;
@@ -75,27 +74,34 @@
       background: #171717;
       color: white;
       border-radius: 18px;
-      padding: 25px 20px;
-      margin-bottom: 25px;
-      position: relative;
       overflow: hidden;
+      margin-bottom: 25px;
     }
 
-    .banner h2 {
-      font-size: 27px;
-      line-height: 1.15;
-      margin-bottom: 10px;
+    .banner-image {
+      width: 100%;
+      height: 240px;
+      object-fit: cover;
+      display: block;
     }
 
-    .banner p {
+    .banner-content {
+      padding: 18px;
+    }
+
+    .banner-content h2 {
+      font-size: 25px;
+      margin-bottom: 8px;
+    }
+
+    .banner-content p {
       color: #ddd;
       font-size: 14px;
       line-height: 1.5;
-      margin-bottom: 18px;
-      max-width: 260px;
+      margin-bottom: 15px;
     }
 
-    .banner button {
+    .banner-btn {
       border: none;
       background: white;
       color: #111;
@@ -103,14 +109,6 @@
       border-radius: 9px;
       font-weight: bold;
       cursor: pointer;
-    }
-
-    .banner-shirt {
-      position: absolute;
-      right: 15px;
-      bottom: 15px;
-      font-size: 90px;
-      transform: rotate(-8deg);
     }
 
     /* SECTION */
@@ -127,8 +125,8 @@
     }
 
     .section-header span {
+      color: #777;
       font-size: 13px;
-      color: #666;
     }
 
     /* CATEGORIES */
@@ -147,19 +145,30 @@
     .category {
       min-width: 88px;
       background: white;
+      border: 1px solid #eee;
       border-radius: 14px;
       padding: 13px 8px;
       text-align: center;
-      border: 1px solid #eee;
       box-shadow: 0 2px 8px rgba(0,0,0,.04);
     }
 
     .category-icon {
-      font-size: 30px;
-      margin-bottom: 7px;
+      width: 55px;
+      height: 55px;
+      margin: auto;
+      border-radius: 12px;
+      overflow: hidden;
+      background: #eee;
+    }
+
+    .category-icon img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
 
     .category-name {
+      margin-top: 8px;
       font-size: 12px;
       font-weight: bold;
     }
@@ -176,18 +185,22 @@
       background: white;
       border-radius: 16px;
       overflow: hidden;
-      box-shadow: 0 2px 10px rgba(0,0,0,.06);
       border: 1px solid #eee;
+      box-shadow: 0 2px 10px rgba(0,0,0,.06);
     }
 
     .product-image {
-      height: 175px;
-      background: #eeeeee;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 78px;
+      height: 190px;
+      background: #eee;
       position: relative;
+      overflow: hidden;
+    }
+
+    .product-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
     }
 
     .offer {
@@ -200,6 +213,7 @@
       border-radius: 6px;
       font-size: 10px;
       font-weight: bold;
+      z-index: 2;
     }
 
     .product-info {
@@ -212,15 +226,15 @@
     }
 
     .product-info p {
-      font-size: 12px;
       color: #777;
-      margin-bottom: 9px;
+      font-size: 12px;
+      margin-bottom: 10px;
     }
 
     .price-row {
       display: flex;
-      align-items: center;
       justify-content: space-between;
+      align-items: center;
       gap: 5px;
     }
 
@@ -230,12 +244,12 @@
     }
 
     .customize-btn {
+      border: none;
       background: #111;
       color: white;
-      border: none;
+      padding: 9px 10px;
       border-radius: 8px;
-      padding: 9px 11px;
-      font-size: 11px;
+      font-size: 10px;
       font-weight: bold;
       cursor: pointer;
     }
@@ -255,7 +269,7 @@
       padding: 15px;
     }
 
-    .why-card div {
+    .why-card-icon {
       font-size: 25px;
       margin-bottom: 8px;
     }
@@ -265,12 +279,12 @@
     }
 
     .why-card p {
-      font-size: 11px;
       color: #777;
+      font-size: 11px;
       margin-top: 4px;
     }
 
-    /* BOTTOM NAVIGATION */
+    /* BOTTOM NAV */
 
     .bottom-nav {
       position: fixed;
@@ -288,12 +302,12 @@
 
     .nav-item {
       text-align: center;
-      font-size: 11px;
       color: #666;
+      font-size: 11px;
       cursor: pointer;
     }
 
-    .nav-item .icon {
+    .nav-icon {
       font-size: 22px;
       margin-bottom: 3px;
     }
@@ -303,16 +317,14 @@
       font-weight: bold;
     }
 
-    /* FOOTER */
-
     footer {
       text-align: center;
-      padding: 25px 10px;
       color: #888;
       font-size: 11px;
+      padding: 25px 10px;
     }
 
-    /* MOBILE */
+    /* SMALL PHONE */
 
     @media (max-width: 380px) {
 
@@ -321,14 +333,14 @@
       }
 
       .product-image {
-        height: 200px;
+        height: 220px;
       }
 
-      .banner h2 {
-        font-size: 24px;
+      .banner-image {
+        height: 210px;
       }
-
     }
+
   </style>
 </head>
 
@@ -355,8 +367,8 @@
       <span>🔍</span>
 
       <input
-        type="text"
         id="searchInput"
+        type="text"
         placeholder="Search products..."
         oninput="searchProducts()"
       >
@@ -368,26 +380,34 @@
 
   <main class="container">
 
+
     <!-- BANNER -->
 
     <section class="banner">
 
-      <h2>
-        Design Your<br>
-        Own T-Shirt 👕
-      </h2>
+      <img
+        src="tshirt.jpg.png"
+        class="banner-image"
+        alt="Custom T-Shirt"
+      >
 
-      <p>
-        Apna photo ya design upload karein
-        aur apni custom T-Shirt banayein.
-      </p>
+      <div class="banner-content">
 
-      <button onclick="openCustomize()">
-        Start Designing →
-      </button>
+        <h2>
+          Design Your Own T-Shirt 👕
+        </h2>
 
-      <div class="banner-shirt">
-        👕
+        <p>
+          Apna photo ya design upload karein
+          aur apni custom T-Shirt banayein.
+        </p>
+
+        <button
+          class="banner-btn"
+          onclick="openCustomize()">
+          🎨 Start Designing →
+        </button>
+
       </div>
 
     </section>
@@ -399,53 +419,97 @@
 
       <h2>Categories</h2>
 
-      <span>See all</span>
+      <span>Explore All</span>
 
     </div>
 
 
     <div class="categories">
 
-      <div class="category">
-        <div class="category-icon">👕</div>
-        <div class="category-name">T-Shirts</div>
+      <div class="category"
+           onclick="openCustomize()">
+
+        <div class="category-icon">
+
+          <img
+            src="tshirt.jpg.png"
+            alt="T-Shirts">
+
+        </div>
+
+        <div class="category-name">
+          T-Shirts
+        </div>
+
       </div>
 
-      <div class="category">
-        <div class="category-icon">☕</div>
-        <div class="category-name">Mugs</div>
-      </div>
 
       <div class="category">
-        <div class="category-icon">🧢</div>
-        <div class="category-name">Caps</div>
+
+        <div class="category-icon">
+
+          <img
+            src="mug.jpg.jpg"
+            alt="Mugs">
+
+        </div>
+
+        <div class="category-name">
+          Mugs
+        </div>
+
       </div>
 
-      <div class="category">
-        <div class="category-icon">🎁</div>
-        <div class="category-name">Gifts</div>
-      </div>
 
       <div class="category">
-        <div class="category-icon">🛍️</div>
-        <div class="category-name">Bags</div>
+
+        <div class="category-icon">
+
+          <img
+            src="cap.jpg.jpg"
+            alt="Caps">
+
+        </div>
+
+        <div class="category-name">
+          Caps
+        </div>
+
+      </div>
+
+
+      <div class="category">
+
+        <div class="category-icon">
+
+          <img
+            src="gift.jpg.jpg"
+            alt="Gifts">
+
+        </div>
+
+        <div class="category-name">
+          Gifts
+        </div>
+
       </div>
 
     </div>
 
 
-    <!-- PRODUCTS -->
+    <!-- POPULAR PRODUCTS -->
 
     <div class="section-header">
 
       <h2>🔥 Popular Products</h2>
 
-      <span>View all</span>
+      <span>View All</span>
 
     </div>
 
 
     <div class="products" id="productList">
+
 
       <!-- T-SHIRT -->
 
@@ -457,15 +521,20 @@
             CUSTOM
           </span>
 
-          👕
+          <img
+            src="tshirt.jpg.png"
+            alt="Custom T-Shirt">
+
         </div>
 
         <div class="product-info">
 
-          <h3>Custom T-Shirt</h3>
+          <h3>
+            Custom T-Shirt
+          </h3>
 
           <p>
-            Your design • Premium Print
+            Your Design • Premium Print
           </p>
 
           <div class="price-row">
@@ -497,13 +566,17 @@
             POPULAR
           </span>
 
-          ☕
+          <img
+            src="mug.jpg.jpg"
+            alt="Custom Mug">
 
         </div>
 
         <div class="product-info">
 
-          <h3>Custom Mug</h3>
+          <h3>
+            Custom Mug
+          </h3>
 
           <p>
             Photo • Name • Design
@@ -533,12 +606,18 @@
       <div class="product">
 
         <div class="product-image">
-          🧢
+
+          <img
+            src="cap.jpg.jpg"
+            alt="Custom Cap">
+
         </div>
 
         <div class="product-info">
 
-          <h3>Custom Cap</h3>
+          <h3>
+            Custom Cap
+          </h3>
 
           <p>
             Logo • Name • Text
@@ -568,15 +647,21 @@
       <div class="product">
 
         <div class="product-image">
-          🎁
+
+          <img
+            src="gift.jpg.jpg"
+            alt="Custom Gift">
+
         </div>
 
         <div class="product-info">
 
-          <h3>Custom Gift</h3>
+          <h3>
+            Custom Gift
+          </h3>
 
           <p>
-            Special gifts for everyone
+            Photo • Name • Special Gift
           </p>
 
           <div class="price-row">
@@ -597,6 +682,7 @@
 
       </div>
 
+
     </div>
 
 
@@ -604,7 +690,9 @@
 
     <div class="section-header">
 
-      <h2>Why Choose Us?</h2>
+      <h2>
+        Why Choose Us?
+      </h2>
 
     </div>
 
@@ -613,9 +701,13 @@
 
       <div class="why-card">
 
-        <div>🎨</div>
+        <div class="why-card-icon">
+          🎨
+        </div>
 
-        <strong>Custom Design</strong>
+        <strong>
+          Custom Design
+        </strong>
 
         <p>
           Apna design upload karein.
@@ -626,12 +718,16 @@
 
       <div class="why-card">
 
-        <div>⭐</div>
+        <div class="why-card-icon">
+          ⭐
+        </div>
 
-        <strong>Premium Quality</strong>
+        <strong>
+          Premium Quality
+        </strong>
 
         <p>
-          Quality printing & products.
+          High quality printing.
         </p>
 
       </div>
@@ -639,9 +735,13 @@
 
       <div class="why-card">
 
-        <div>🚚</div>
+        <div class="why-card-icon">
+          🚚
+        </div>
 
-        <strong>Fast Delivery</strong>
+        <strong>
+          Fast Delivery
+        </strong>
 
         <p>
           Fast order processing.
@@ -652,9 +752,13 @@
 
       <div class="why-card">
 
-        <div>💬</div>
+        <div class="why-card-icon">
+          💬
+        </div>
 
-        <strong>Easy Ordering</strong>
+        <strong>
+          Easy Ordering
+        </strong>
 
         <p>
           Simple & easy process.
@@ -671,48 +775,64 @@
 
       <br><br>
 
-      Custom Printing • Custom Products • Custom Designs
+      Your Idea • Our Print • Your Style
 
     </footer>
 
   </main>
 
 
-  <!-- BOTTOM NAV -->
+  <!-- BOTTOM NAVIGATION -->
 
   <nav class="bottom-nav">
 
-    <div class="nav-item active"
-         onclick="goHome()">
+    <div
+      class="nav-item active"
+      onclick="goHome()">
 
-      <div class="icon">🏠</div>
+      <div class="nav-icon">
+        🏠
+      </div>
+
       Home
 
     </div>
 
 
-    <div class="nav-item"
-         onclick="showCategories()">
+    <div
+      class="nav-item"
+      onclick="showCategories()">
 
-      <div class="icon">📦</div>
+      <div class="nav-icon">
+        📦
+      </div>
+
       Categories
 
     </div>
 
 
-    <div class="nav-item"
-         onclick="showCart()">
+    <div
+      class="nav-item"
+      onclick="showCart()">
 
-      <div class="icon">🛒</div>
+      <div class="nav-icon">
+        🛒
+      </div>
+
       Cart
 
     </div>
 
 
-    <div class="nav-item"
-         onclick="showOrders()">
+    <div
+      class="nav-item"
+      onclick="showOrders()">
 
-      <div class="icon">📋</div>
+      <div class="nav-icon">
+        📋
+      </div>
+
       Orders
 
     </div>
@@ -722,7 +842,8 @@
 
   <script>
 
-    /* OPEN CUSTOMIZATION */
+
+    /* CUSTOMIZE */
 
     function openCustomize() {
 
@@ -740,17 +861,6 @@
         top: 0,
         behavior: "smooth"
       });
-
-    }
-
-
-    /* COMING SOON */
-
-    function comingSoon() {
-
-      alert(
-        "Ye product jaldi available hoga! 😊"
-      );
 
     }
 
@@ -789,16 +899,23 @@
     }
 
 
+    /* COMING SOON */
+
+    function comingSoon() {
+
+      alert(
+        "Is product ka customization page jaldi available hoga. 😊"
+      );
+
+    }
+
+
     /* CATEGORIES */
 
     function showCategories() {
 
-      alert(
-        "Categories section upar hai. 👕 ☕ 🧢 🎁"
-      );
-
       window.scrollTo({
-        top: 400,
+        top: 350,
         behavior: "smooth"
       });
 
@@ -818,7 +935,7 @@
           JSON.parse(cart);
 
         alert(
-          "🛒 Cart\n\n" +
+          "🛒 CART\n\n" +
           item.product +
           "\nColour: " +
           item.color +
@@ -847,7 +964,7 @@
 
       alert(
         "📋 Orders\n\n" +
-        "Order tracking system Step 8-9 mein add karenge."
+        "Order tracking system next step mein add karenge."
       );
 
     }
