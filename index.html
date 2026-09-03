@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>SAHIL T SHIRT PRINTING</title>
+
+<style>
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+  font-family:Arial,Helvetica,sans-serif;
+}
+
+body{
+  background:#f7f7fb;
+  color:#202020;
+  padding-bottom:75px;
+}
+
+/* HEADER */
+.header{
+  background:#ffffff;
+  padding:16px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  box-shadow:0 2px 12px rgba(0,0,0,.08);
+  position:sticky;
+  top:0;
+  z-index:100;
+}
+
+.logo{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.logoIcon{
+  width:45px;
+  height:45px;
+  border-radius:14px;
+  background:linear-gradient(135deg,#6c2bd9,#9b51e0);
+  color:#ffd928;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:25px;
+  font-weight:bold;
+}
+
+.logoText h1{
+  font-size:17px;
+  color:#4c1d95;
+}
+
+.logoText p{
+  font-size:11px;
+  color:#777;
+  margin-top:3px;
+}
+
+.cartBtn{
+  border:0;
+  background:#ffd928;
+  color:#35126b;
+  width:44px;
+  height:44px;
+  border-radius:14px;
+  font-size:21px;
+  cursor:pointer;
+}
+
+/* SEARCH */
+.searchBox{
+  margin:15px;
+  background:white;
+  border:2px solid #6c2bd9;
+  border-radius:15px;
+  padding:12px 15px;
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.searchBox input{
+  border:0;
+  outline:0;
+  width:100%;
+  font-size:15px;
+}
+
+/* HERO */
+.hero{
+  margin:15px;
+  border-radius:22px;
+  overflow:hidden;
+  position:relative;
+  min-height:230px;
+  background:#35126b;
+}
+
+.hero img{
+  width:100%;
+  height:230px;
+  object-fit:cover;
+  display:block;
+  opacity:.72;
+}
+
+.heroContent{
+  position:absolute;
+  inset:0;
+  padding:25px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  color:white;
+}
+
+.heroContent h2{
+  font-size:29px;
+  max-width:270px;
+  line-height:1.1;
+}
+
+.heroContent p{
+  margin-top:10px;
+  font-size:14px;
+}
+
+.heroBtn{
+  margin-top:17px;
+  width:max-content;
+  border:0;
+  background:#ffd928;
+  color:#35126b;
+  padding:12px 19px;
+  border-radius:12px;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+/* SECTION */
+.section{
+  padding:5px 15px 20px;
+}
+
+.sectionTitle{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:13px;
+}
+
+.sectionTitle h2{
+  font-size:20px;
+  color:#35126b;
+}
+
+.sectionTitle button{
+  border:0;
+  background:transparent;
+  color:#6c2bd9;
+  font-weight:bold;
+}
+
+/* CATEGORY */
+.categories{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:9px;
+}
+
+.category{
+  background:white;
+  border-radius:17px;
+  padding:9px 5px;
+  text-align:center;
+  box-shadow:0 4px 14px rgba(0,0,0,.07);
+  cursor:pointer;
+  transition:.2s;
+}
+
+.category:active{
+  transform:scale(.96);
+}
+
+.category img{
+  width:58px;
+  height:58px;
+  border-radius:14px;
+  object-fit:cover;
+}
+
+.category p{
+  font-size:12px;
+  font-weight:bold;
+  margin-top:7px;
+  color:#35126b;
+}
+
+/* PRODUCTS */
+.products{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:13px;
+}
+
+.product{
+  background:white;
+  border-radius:19px;
+  overflow:hidden;
+  box-shadow:0 5px 18px rgba(0,0,0,.08);
+}
+
+.product img{
+  width:100%;
+  height:170px;
+  object-fit:cover;
+  display:block;
+}
+
+.productInfo{
+  padding:12px;
+}
+
+.productInfo h3{
+  font-size:16px;
+  color:#292929;
+}
+
+.productInfo p{
+  font-size:12px;
+  color:#777;
+  margin-top:5px;
+}
+
+.price{
+  margin-top:9px;
+  font-size:18px;
+  font-weight:bold;
+  color:#6c2bd9;
+}
+
+.shopBtn{
+  width:100%;
+  border:0;
+  background:#6c2bd9;
+  color:white;
+  padding:11px;
+  border-radius:11px;
+  margin-top:10px;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+/* INFO */
+.info{
+  margin:0 15px 20px;
+  background:linear-gradient(135deg,#35126b,#6c2bd9);
+  color:white;
+  border-radius:20px;
+  padding:20px;
+}
+
+.info h2{
+  color:#ffd928;
+  margin-bottom:8px;
+  font-size:20px;
+}
+
+.info p{
+  font-size:13px;
+  line-height:1.6;
+}
+
+/* WHATSAPP */
+.whatsapp{
+  margin:0 15px 20px;
+  background:#25D366;
+  color:white;
+  border:0;
+  width:calc(100% - 30px);
+  padding:14px;
+  border-radius:14px;
+  font-size:15px;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+/* BOTTOM NAV */
+.bottomNav{
+  position:fixed;
+  bottom:0;
+  left:0;
+  right:0;
+  height:68px;
+  background:white;
+  box-shadow:0 -3px 15px rgba(0,0,0,.12);
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  z-index:200;
+}
+
+.navItem{
+  border:0;
+  background:white;
+  font-size:12px;
+  color:#777;
+  cursor:pointer;
+}
+
+.navItem span{
+  display:block;
+  font-size:22px;
+  margin-bottom:3px;
+}
+
+.navItem.active{
+  color:#6c2bd9;
+  font-weight:bold;
+}
+
+/* MOBILE */
+@media(max-width:380px){
+  .categories{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .heroContent h2{
+    font-size:25px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header class="header">
+
+  <div class="logo">
+    <div class="logoIcon">S</div>
+
+    <div class="logoText">
+      <h1>SAHIL T SHIRT PRINTING</h1>
+      <p>Custom Printing • Premium Quality</p>
+    </div>
+  </div>
+
+  <button class="cartBtn" onclick="openCart()">🛒</button>
+
+</header>
+
+
+<!-- SEARCH -->
+<div class="searchBox">
+  🔍
+  <input
+    type="text"
+    id="searchInput"
+    placeholder="Search T-shirt, Mug, Gift, Cap..."
+    oninput="searchProducts()"
+  >
+</div>
+
+
+<!-- HERO -->
+<section class="hero">
+
+  <img src="tshirt.jpg.png" alt="Custom T Shirt">
+
+  <div class="heroContent">
+    <h2>Apna Design,<br>Apni Style 🔥</h2>
+
+    <p>Custom printed products ghar baithe order karein.</p>
+
+    <button class="heroBtn" onclick="openTshirt()">
+      👕 Customize T-Shirt
+    </button>
+  </div>
+
+</section>
+
+
+<!-- CATEGORIES -->
+<section class="section">
+
+  <div class="sectionTitle">
+    <h2>Shop By Category</h2>
+  </div>
+
+  <div class="categories">
+
+    <div class="category" onclick="openTshirt()">
+      <img src="tshirt.jpg.png" alt="T Shirt">
+      <p>👕 T-Shirt</p>
+    </div>
+
+    <div class="category" onclick="openMug()">
+      <img src="mug.jpg.jpg" alt="Mug">
+      <p>☕ Mug</p>
+    </div>
+
+    <div class="category" onclick="openGift()">
+      <img src="gift.jpg.jpg" alt="Gift">
+      <p>🎁 Gift</p>
+    </div>
+
+    <div class="category" onclick="openCap()">
+      <img src="cap.jpg.jpg" alt="Cap">
+      <p>🧢 Cap</p>
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- PRODUCTS -->
+<section class="section">
+
+  <div class="sectionTitle">
+    <h2>🔥 Popular Products</h2>
+  </div>
+
+  <div class="products" id="productList">
+
+    <!-- T SHIRT -->
+    <div class="product" data-name="tshirt t shirt custom printed">
+
+      <img src="tshirt.jpg.png" alt="Custom T Shirt">
+
+      <div class="productInfo">
+        <h3>Custom T-Shirt</h3>
+        <p>Apna photo / design print karaye</p>
+
+        <div class="price">₹299</div>
+
+        <button class="shopBtn" onclick="openTshirt()">
+          Customize Now
+        </button>
+      </div>
+
+    </div>
+
+
+    <!-- MUG -->
+    <div class="product" data-name="mug custom printed mug">
+
+      <img src="mug.jpg.jpg" alt="Custom Mug">
+
+      <div class="productInfo">
+        <h3>Custom Mug</h3>
+        <p>Personalized photo mug</p>
+
+        <div class="price">₹149</div>
+
+        <button class="shopBtn" onclick="openMug()">
+          Customize Now
+        </button>
+      </div>
+
+    </div>
+
+
+    <!-- GIFT -->
+    <div class="product" data-name="gift personalized gift">
+
+      <img src="gift.jpg.jpg" alt="Custom Gift">
+
+      <div class="productInfo">
+        <h3>Personalized Gift</h3>
+        <p>Special moments ke liye</p>
+
+        <div class="price">₹199</div>
+
+        <button class="shopBtn" onclick="openGift()">
+          Customize Now
+        </button>
+      </div>
+
+    </div>
+
+
+    <!-- CAP -->
+    <div class="product" data-name="cap custom printed cap">
+
+      <img src="cap.jpg.jpg" alt="Custom Cap">
+
+      <div class="productInfo">
+        <h3>Custom Cap</h3>
+        <p>Apne style ka custom cap</p>
+
+        <div class="price">₹199</div>
+
+        <button class="shopBtn" onclick="openCap()">
+          Customize Now
+        </button>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- INFO -->
+<div class="info">
+
+  <h2>✨ Why Choose Us?</h2>
+
+  <p>
+    ✔ Premium printing quality<br>
+    ✔ Custom photo & design printing<br>
+    ✔ Affordable prices<br>
+    ✔ WhatsApp order support<br>
+    ✔ Made specially for you ❤️
+  </p>
+
+</div>
+
+
+<!-- WHATSAPP -->
+<button class="whatsapp" onclick="openWhatsApp()">
+  💬 WhatsApp par Order / Enquiry
+</button>
+
+
+<!-- BOTTOM NAV -->
+<nav class="bottomNav">
+
+  <button class="navItem active" onclick="goHome()">
+    <span>🏠</span>
+    Home
+  </button>
+
+  <button class="navItem" onclick="openCart()">
+    <span>🛒</span>
+    Cart
+  </button>
+
+  <button class="navItem" onclick="openOrders()">
+    <span>📦</span>
+    Orders
+  </button>
+
+</nav>
+
+
+<script>
+
+/* WHATSAPP NUMBER */
+const whatsappNumber = "918250366736";
+
+
+/* PRODUCT PAGES */
+function openTshirt(){
+  window.location.href = "customize.html";
+}
+
+function openMug(){
+  window.location.href = "mug.html";
+}
+
+function openGift(){
+  window.location.href = "gift.html";
+}
+
+function openCap(){
+  window.location.href = "cap.html";
+}
+
+
+/* CART */
+function openCart(){
+
+  if(localStorage.getItem("cartItem")){
+    window.location.href = "cart.html";
+  }else{
+    alert("🛒 Cart abhi empty hai.");
+  }
+
+}
+
+
+/* ORDERS */
+function openOrders(){
+
+  if(localStorage.getItem("cartItem")){
+    window.location.href = "order.html";
+  }else{
+    alert("📦 Pehle koi product select karein.");
+  }
+
+}
+
+
+/* HOME */
+function goHome(){
+  window.scrollTo({
+    top:0,
+    behavior:"smooth"
+  });
+}
+
+
+/* WHATSAPP */
+function openWhatsApp(){
+
+  const message =
+    "Hello SAHIL T SHIRT PRINTING 👋%0A%0A" +
+    "Mujhe custom printing ke baare mein information chahiye.";
+
+  window.open(
+    "https://wa.me/" + whatsappNumber + "?text=" + message,
+    "_blank"
+  );
+
+}
+
+
+/* SEARCH */
+function searchProducts(){
+
+  const search =
+    document
+      .getElementById("searchInput")
+      .value
+      .toLowerCase()
+      .trim();
+
+  const products =
+    document.querySelectorAll(".product");
+
+  products.forEach(function(product){
+
+    const name =
+      product.getAttribute("data-name");
+
+    if(name.includes(search)){
+      product.style.display = "block";
+    }else{
+      product.style.display = "none";
+    }
+
+  });
+
+}
+
+</script>
+
+</body>
+</html>
