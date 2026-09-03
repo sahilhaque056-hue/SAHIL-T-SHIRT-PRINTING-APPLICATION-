@@ -1,440 +1,823 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>SAHIL T SHIRT PRINTING</title>
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<meta name="theme-color"
+content="#6C2BD9">
+
+<title>
+SAHIL T SHIRT PRINTING | Custom Printing
+</title>
 
 <style>
+
+/* =====================================================
+   GLOBAL
+===================================================== */
+
 *{
-  box-sizing:border-box;
   margin:0;
   padding:0;
+  box-sizing:border-box;
+  -webkit-tap-highlight-color:transparent;
+}
+
+html{
+  scroll-behavior:smooth;
 }
 
 body{
-  font-family:Arial,sans-serif;
-  background:#f7f7f8;
-  color:#202124;
-  padding-bottom:82px;
+  font-family:Arial,Helvetica,sans-serif;
+  background:#f7f5ff;
+  color:#20152f;
+  padding-bottom:88px;
 }
 
-/* ================= HEADER ================= */
-
-.header{
-  background:#fff;
-  padding:14px 16px;
-  display:flex;
-  align-items:center;
-  gap:11px;
-  position:sticky;
-  top:0;
-  z-index:50;
-  box-shadow:0 2px 14px rgba(0,0,0,.07);
+button,
+input{
+  font-family:inherit;
 }
 
-.logo{
-  width:46px;
-  height:46px;
-  border-radius:14px;
-  background:linear-gradient(135deg,#ff8a00,#ff5b00);
-  color:#fff;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:17px;
-  font-weight:900;
-  box-shadow:0 5px 15px rgba(255,105,0,.25);
+button{
+  cursor:pointer;
 }
-
-.shop-name{
-  font-size:17px;
-  font-weight:900;
-  letter-spacing:.1px;
-}
-
-.shop-sub{
-  color:#777;
-  font-size:11px;
-  margin-top:3px;
-}
-
-/* ================= LOCATION ================= */
-
-.location{
-  background:#fff;
-  padding:10px 16px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  border-top:1px solid #f1f1f1;
-}
-
-.location-text{
-  max-width:70%;
-  white-space:nowrap;
-  overflow:hidden;
-  text-overflow:ellipsis;
-  font-size:13px;
-  color:#555;
-}
-
-.address-btn{
-  border:0;
-  background:#fff1e5;
-  color:#e96500;
-  padding:8px 12px;
-  border-radius:10px;
-  font-size:12px;
-  font-weight:800;
-}
-
-/* ================= SEARCH ================= */
-
-.search-area{
-  background:#fff;
-  padding:11px 16px 15px;
-}
-
-.search-box{
-  height:48px;
-  display:flex;
-  align-items:center;
-  gap:10px;
-  background:#f8f8f8;
-  border:2px solid #ff7900;
-  border-radius:15px;
-  padding:0 13px;
-  box-shadow:0 3px 10px rgba(255,121,0,.08);
-}
-
-.search-icon{
-  font-size:22px;
-}
-
-.search-box input{
-  flex:1;
-  height:100%;
-  border:0;
-  outline:0;
-  background:transparent;
-  font-size:14px;
-}
-
-/* ================= MAIN ================= */
 
 .container{
-  max-width:1100px;
+  width:100%;
+  max-width:1150px;
   margin:auto;
 }
 
-/* ================= CATEGORIES ================= */
 
-.category-section{
-  padding:19px 15px 10px;
-}
+/* =====================================================
+   HEADER
+===================================================== */
 
-.section-heading{
+.header{
+  position:sticky;
+  top:0;
+  z-index:100;
+
+  background:rgba(255,255,255,.94);
+  backdrop-filter:blur(18px);
+
+  border-bottom:1px solid #eee8fa;
+
+  padding:13px 16px;
+
   display:flex;
-  justify-content:space-between;
   align-items:center;
-  margin-bottom:14px;
+  gap:12px;
 }
 
-.section-heading h2{
+.logo{
+  width:48px;
+  height:48px;
+
+  border-radius:15px;
+
+  background:linear-gradient(
+    135deg,
+    #ffd400,
+    #ffb800
+  );
+
+  color:#32145f;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  font-size:18px;
+  font-weight:1000;
+
+  box-shadow:
+    0 7px 18px rgba(255,190,0,.28);
+}
+
+.brand{
+  flex:1;
+}
+
+.brand-name{
+  font-size:17px;
+  font-weight:1000;
+  letter-spacing:.2px;
+}
+
+.brand-sub{
+  margin-top:3px;
+  color:#81758e;
+  font-size:11px;
+}
+
+.header-cart{
+  width:43px;
+  height:43px;
+
+  border:0;
+  border-radius:14px;
+
+  background:#f1eaff;
+
+  color:#6825c8;
+
   font-size:21px;
+
+  position:relative;
+}
+
+.header-cart:active{
+  transform:scale(.94);
+}
+
+
+/* =====================================================
+   CART BADGE
+===================================================== */
+
+.cart-badge{
+  position:absolute;
+
+  top:-4px;
+  right:-3px;
+
+  min-width:19px;
+  height:19px;
+
+  padding:0 5px;
+
+  border-radius:20px;
+
+  background:#ff3b30;
+
+  color:white;
+
+  border:2px solid white;
+
+  font-size:9px;
   font-weight:900;
+
+  display:none;
+
+  align-items:center;
+  justify-content:center;
 }
 
-.see-all{
-  border:0;
-  background:none;
-  color:#ed6800;
-  font-size:14px;
-  font-weight:900;
-}
 
-/* CATEGORY GRID */
+/* =====================================================
+   ADDRESS
+===================================================== */
 
-.categories{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:10px;
-}
-
-/* PREMIUM CATEGORY CARD */
-
-.category{
-  border:0;
-  padding:0;
+.address-bar{
   background:#fff;
-  border-radius:22px;
+
+  padding:11px 16px;
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+  border-bottom:1px solid #eee8fa;
+}
+
+.address-info{
+  display:flex;
+  align-items:center;
+  gap:8px;
+
+  min-width:0;
+}
+
+.location-icon{
+  width:32px;
+  height:32px;
+
+  border-radius:10px;
+
+  background:#fff5c7;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  font-size:17px;
+}
+
+.address-text{
+  max-width:220px;
+
+  font-size:12px;
+  font-weight:700;
+
+  white-space:nowrap;
   overflow:hidden;
-  box-shadow:0 5px 18px rgba(0,0,0,.08);
-  cursor:pointer;
-  text-align:left;
+  text-overflow:ellipsis;
+}
+
+.address-small{
+  color:#8b8194;
+  font-size:10px;
+  margin-top:2px;
+}
+
+.change-address{
+  border:0;
+
+  background:#6c2bd9;
+  color:white;
+
+  padding:8px 11px;
+
+  border-radius:10px;
+
+  font-size:11px;
+  font-weight:900;
+}
+
+
+/* =====================================================
+   SEARCH
+===================================================== */
+
+.search-area{
+  background:white;
+
+  padding:12px 16px 16px;
+}
+
+.search{
+  height:51px;
+
+  background:#f7f4ff;
+
+  border:2px solid #e7dcff;
+
+  border-radius:16px;
+
+  display:flex;
+  align-items:center;
+
+  padding:0 14px;
+
   transition:.2s;
 }
 
-.category:active{
-  transform:scale(.97);
+.search:focus-within{
+  border-color:#7a39dc;
+
+  box-shadow:
+    0 5px 20px rgba(108,43,217,.10);
 }
 
-.category-image{
-  height:145px;
-  position:relative;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  overflow:hidden;
+.search-icon{
+  font-size:21px;
+  margin-right:9px;
 }
 
-.category-image img{
-  width:88%;
-  height:88%;
-  object-fit:contain;
-  position:relative;
-  z-index:2;
-  filter:drop-shadow(0 8px 8px rgba(0,0,0,.12));
-}
-
-.category-1 .category-image{
-  background:linear-gradient(135deg,#ffd99a,#ffb968);
-}
-
-.category-2 .category-image{
-  background:linear-gradient(135deg,#ffc2d7,#ff91b7);
-}
-
-.category-3 .category-image{
-  background:linear-gradient(135deg,#d9c8ff,#b88cff);
-}
-
-.category-4 .category-image{
-  background:linear-gradient(135deg,#a9dcff,#72bfff);
-}
-
-/* DECORATION */
-
-.category-image::before{
-  content:"";
-  position:absolute;
-  width:85px;
-  height:85px;
-  border-radius:50%;
-  background:rgba(255,255,255,.23);
-  top:-25px;
-  right:-18px;
-}
-
-.category-image::after{
-  content:"✦";
-  position:absolute;
-  font-size:25px;
-  color:rgba(255,255,255,.75);
-  left:13px;
-  bottom:10px;
-}
-
-/* CATEGORY BOTTOM */
-
-.category-bottom{
-  height:60px;
-  padding:8px 8px 8px 10px;
-  display:flex;
-  align-items:center;
-  gap:7px;
-}
-
-.category-icon{
-  width:39px;
-  height:39px;
-  flex-shrink:0;
-  border-radius:50%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  color:#fff;
-  font-size:20px;
-  box-shadow:0 4px 9px rgba(0,0,0,.12);
-}
-
-.category-1 .category-icon{
-  background:#ff8500;
-}
-
-.category-2 .category-icon{
-  background:#f53678;
-}
-
-.category-3 .category-icon{
-  background:#8b2de2;
-}
-
-.category-4 .category-icon{
-  background:#1688e8;
-}
-
-.category-name{
+.search input{
   flex:1;
-  font-size:13px;
-  font-weight:900;
+
+  border:0;
+  outline:0;
+
+  background:transparent;
+
+  font-size:14px;
+  color:#30243d;
 }
 
-.arrow{
-  width:30px;
-  height:30px;
-  border-radius:50%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  color:#fff;
-  font-size:20px;
-  font-weight:bold;
+.search input::placeholder{
+  color:#988fa3;
 }
 
-.category-1 .arrow{
-  background:#ffae48;
-}
 
-.category-2 .arrow{
-  background:#ff6f9c;
-}
+/* =====================================================
+   HERO
+===================================================== */
 
-.category-3 .arrow{
-  background:#b477f1;
+.hero-wrap{
+  padding:15px 15px 5px;
 }
-
-.category-4 .arrow{
-  background:#69b8f5;
-}
-
-/* ================= HERO ================= */
 
 .hero{
-  margin:15px;
-  height:235px;
-  border-radius:24px;
-  overflow:hidden;
   position:relative;
-  background:#542816;
-  box-shadow:0 8px 22px rgba(0,0,0,.12);
+
+  min-height:260px;
+
+  border-radius:27px;
+
+  overflow:hidden;
+
+  background:
+    linear-gradient(
+      135deg,
+      #3b176d,
+      #702bd1
+    );
+
+  box-shadow:
+    0 12px 35px rgba(72,25,130,.22);
 }
 
-.hero img{
-  width:100%;
+.hero::before{
+  content:"";
+
+  position:absolute;
+
+  width:220px;
+  height:220px;
+
+  border-radius:50%;
+
+  background:#ffd400;
+
+  opacity:.18;
+
+  right:-70px;
+  top:-70px;
+}
+
+.hero::after{
+  content:"";
+
+  position:absolute;
+
+  width:150px;
+  height:150px;
+
+  border-radius:50%;
+
+  background:#ffd400;
+
+  opacity:.10;
+
+  left:-60px;
+  bottom:-70px;
+}
+
+.hero-image{
+  position:absolute;
+
+  right:0;
+  top:0;
+
+  width:58%;
   height:100%;
+
   object-fit:cover;
-  opacity:.43;
+
+  opacity:.48;
 }
 
 .hero-overlay{
   position:absolute;
   inset:0;
-  background:linear-gradient(
-    90deg,
-    rgba(55,20,5,.82),
-    rgba(80,30,5,.25)
-  );
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(53,18,94,.98) 0%,
+      rgba(74,28,124,.88) 42%,
+      rgba(74,28,124,.25) 100%
+    );
 }
 
 .hero-content{
-  position:absolute;
-  inset:0;
-  padding:25px 21px;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  color:#fff;
+  position:relative;
+  z-index:3;
+
+  padding:27px 21px;
+
+  max-width:63%;
+
+  color:white;
 }
 
-.hero-small{
-  font-size:12px;
-  font-weight:800;
-  color:#ffd6a9;
-  margin-bottom:7px;
+.hero-badge{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+
+  background:#ffd400;
+  color:#3b176d;
+
+  padding:7px 11px;
+
+  border-radius:30px;
+
+  font-size:10px;
+  font-weight:1000;
+
+  margin-bottom:12px;
 }
 
 .hero-title{
-  font-size:29px;
-  line-height:1.08;
-  font-weight:900;
-  max-width:280px;
+  font-size:31px;
+  line-height:1.04;
+
+  font-weight:1000;
 }
 
 .hero-title span{
-  color:#ff8a00;
+  color:#ffd400;
 }
 
 .hero-text{
-  margin-top:8px;
-  font-size:13px;
-  line-height:1.45;
-  max-width:280px;
+  margin-top:10px;
+
+  color:#eee5fa;
+
+  font-size:12px;
+
+  line-height:1.5;
 }
 
 .hero-btn{
-  width:max-content;
-  margin-top:14px;
-  padding:12px 17px;
+  margin-top:17px;
+
   border:0;
-  border-radius:12px;
-  background:#ff7900;
-  color:#fff;
-  font-size:14px;
-  font-weight:900;
-  box-shadow:0 6px 15px rgba(255,121,0,.35);
+
+  background:#ffd400;
+  color:#3a1765;
+
+  padding:13px 18px;
+
+  border-radius:13px;
+
+  font-size:13px;
+  font-weight:1000;
+
+  box-shadow:
+    0 7px 18px rgba(255,212,0,.25);
 }
 
-/* ================= PRODUCTS ================= */
-
-.products-section{
-  padding:8px 15px 25px;
+.hero-btn:active{
+  transform:scale(.96);
 }
+
+
+/* =====================================================
+   SECTION
+===================================================== */
+
+.section{
+  padding:18px 15px 5px;
+}
+
+.section-head{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+  margin-bottom:13px;
+}
+
+.section-title{
+  font-size:21px;
+  font-weight:1000;
+}
+
+.section-sub{
+  color:#90859b;
+  font-size:11px;
+  margin-top:3px;
+}
+
+.see-all{
+  border:0;
+
+  background:#efe5ff;
+
+  color:#6624c6;
+
+  padding:8px 11px;
+
+  border-radius:10px;
+
+  font-size:11px;
+  font-weight:1000;
+}
+
+
+/* =====================================================
+   PREMIUM CATEGORIES
+===================================================== */
+
+.categories{
+  display:grid;
+
+  grid-template-columns:
+    repeat(4,1fr);
+
+  gap:10px;
+}
+
+.category-card{
+  border:0;
+
+  background:white;
+
+  border-radius:21px;
+
+  overflow:hidden;
+
+  box-shadow:
+    0 6px 20px rgba(43,22,70,.08);
+
+  text-align:left;
+
+  transition:.18s;
+
+  position:relative;
+}
+
+.category-card:active{
+  transform:scale(.96);
+}
+
+.category-top{
+  height:130px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  position:relative;
+
+  overflow:hidden;
+}
+
+.category-top::before{
+  content:"";
+
+  position:absolute;
+
+  width:90px;
+  height:90px;
+
+  border-radius:50%;
+
+  background:rgba(255,255,255,.28);
+
+  top:-28px;
+  right:-20px;
+}
+
+.category-top::after{
+  content:"✦";
+
+  position:absolute;
+
+  color:rgba(255,255,255,.75);
+
+  font-size:22px;
+
+  left:10px;
+  bottom:8px;
+}
+
+.category-img{
+  width:92%;
+  height:92%;
+
+  object-fit:contain;
+
+  position:relative;
+  z-index:2;
+
+  filter:
+    drop-shadow(
+      0 8px 7px rgba(0,0,0,.13)
+    );
+}
+
+.yellow{
+  background:
+    linear-gradient(
+      135deg,
+      #ffe49a,
+      #ffc24d
+    );
+}
+
+.pink{
+  background:
+    linear-gradient(
+      135deg,
+      #ffc7dd,
+      #ff86b2
+    );
+}
+
+.purple{
+  background:
+    linear-gradient(
+      135deg,
+      #dcc8ff,
+      #ae78ef
+    );
+}
+
+.blue{
+  background:
+    linear-gradient(
+      135deg,
+      #b8e3ff,
+      #73b9f2
+    );
+}
+
+.category-bottom{
+  height:55px;
+
+  padding:7px 8px;
+
+  display:flex;
+  align-items:center;
+
+  gap:7px;
+}
+
+.category-icon{
+  width:34px;
+  height:34px;
+
+  border-radius:50%;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  color:white;
+
+  font-size:17px;
+
+  flex-shrink:0;
+}
+
+.yellow-icon{
+  background:#ff9700;
+}
+
+.pink-icon{
+  background:#ed3f7a;
+}
+
+.purple-icon{
+  background:#842be0;
+}
+
+.blue-icon{
+  background:#1688e4;
+}
+
+.category-name{
+  flex:1;
+
+  font-size:12px;
+  font-weight:1000;
+}
+
+.category-arrow{
+  width:27px;
+  height:27px;
+
+  border-radius:50%;
+
+  color:white;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  font-size:19px;
+  font-weight:bold;
+}
+
+
+/* =====================================================
+   FEATURE STRIP
+===================================================== */
+
+.features{
+  margin:15px;
+
+  background:#fff;
+
+  border-radius:18px;
+
+  padding:14px 8px;
+
+  display:grid;
+  grid-template-columns:
+    repeat(3,1fr);
+
+  box-shadow:
+    0 5px 18px rgba(43,22,70,.06);
+}
+
+.feature{
+  text-align:center;
+
+  border-right:1px solid #eee;
+
+  padding:2px 4px;
+}
+
+.feature:last-child{
+  border-right:0;
+}
+
+.feature-icon{
+  font-size:22px;
+}
+
+.feature-title{
+  margin-top:5px;
+
+  font-size:10px;
+  font-weight:1000;
+}
+
+.feature-text{
+  margin-top:3px;
+
+  font-size:9px;
+  color:#8b8194;
+}
+
+
+/* =====================================================
+   PRODUCTS
+===================================================== */
 
 .products{
   display:grid;
-  grid-template-columns:repeat(2,1fr);
+
+  grid-template-columns:
+    repeat(2,1fr);
+
   gap:12px;
 }
 
 .product{
-  background:#fff;
-  border-radius:18px;
+  background:white;
+
+  border-radius:19px;
+
   overflow:hidden;
-  box-shadow:0 4px 14px rgba(0,0,0,.07);
+
+  box-shadow:
+    0 5px 18px rgba(43,22,70,.07);
+
+  transition:.18s;
+
   cursor:pointer;
-  transition:.2s;
 }
 
 .product:active{
-  transform:scale(.98);
+  transform:scale(.97);
 }
 
 .product-image{
-  height:165px;
-  background:#fafafa;
-  padding:10px;
+  height:170px;
+
+  background:#faf9fc;
+
   position:relative;
+
+  padding:10px;
 }
 
 .product-image img{
   width:100%;
   height:100%;
+
   object-fit:contain;
 }
 
-.hot{
+.product-tag{
   position:absolute;
+
   top:9px;
   left:9px;
-  background:#ff5d32;
-  color:#fff;
+
   padding:5px 8px;
+
   border-radius:8px;
-  font-size:10px;
-  font-weight:900;
+
+  background:#ffd400;
+  color:#3c1764;
+
+  font-size:9px;
+  font-weight:1000;
 }
 
 .product-info{
@@ -443,219 +826,355 @@ body{
 
 .product-name{
   font-size:15px;
-  font-weight:900;
+  font-weight:1000;
 }
 
 .product-desc{
-  color:#777;
-  font-size:11px;
   margin-top:5px;
-  line-height:1.35;
-  min-height:29px;
+
+  min-height:28px;
+
+  color:#8c8296;
+
+  font-size:10px;
+
+  line-height:1.4;
 }
 
 .product-bottom{
   display:flex;
+
   align-items:center;
   justify-content:space-between;
+
   margin-top:10px;
 }
 
-.product-price{
+.price{
+  color:#6421c3;
+
   font-size:18px;
-  color:#e65f00;
-  font-weight:900;
+  font-weight:1000;
 }
 
-.product-price small{
+.price small{
   color:#999;
-  font-size:10px;
+
+  font-size:9px;
   font-weight:normal;
 }
 
-.add-btn{
-  width:37px;
-  height:37px;
+.add-product{
+  width:36px;
+  height:36px;
+
   border:0;
+
   border-radius:11px;
-  background:#ff7900;
-  color:#fff;
-  font-size:24px;
-  font-weight:500;
-  box-shadow:0 4px 10px rgba(255,121,0,.25);
+
+  background:#6c2bd9;
+
+  color:white;
+
+  font-size:23px;
+
+  box-shadow:
+    0 5px 12px rgba(108,43,217,.22);
 }
 
-/* NO RESULT */
+
+/* =====================================================
+   NO RESULT
+===================================================== */
 
 .no-result{
   display:none;
-  background:#fff;
-  padding:35px 15px;
+
+  background:white;
+
   border-radius:18px;
+
+  padding:35px 15px;
+
   text-align:center;
-  color:#777;
+
+  color:#81758d;
+
   margin-top:15px;
 }
 
-/* ================= BOTTOM NAV ================= */
+
+/* =====================================================
+   BOTTOM NAVIGATION
+===================================================== */
 
 .bottom-nav{
   position:fixed;
+
   left:0;
   right:0;
   bottom:0;
-  height:72px;
-  background:rgba(255,255,255,.97);
-  backdrop-filter:blur(10px);
-  border-top:1px solid #eee;
-  box-shadow:0 -4px 18px rgba(0,0,0,.08);
+
+  height:76px;
+
+  background:
+    rgba(255,255,255,.96);
+
+  backdrop-filter:blur(18px);
+
+  border-top:1px solid #e9e3f0;
+
+  box-shadow:
+    0 -5px 22px rgba(45,20,70,.10);
+
   display:flex;
   align-items:center;
   justify-content:space-around;
-  z-index:100;
+
+  z-index:200;
 }
 
 .nav-btn{
+  position:relative;
+
   border:0;
   background:none;
-  min-width:62px;
-  color:#777;
-  font-size:11px;
-  font-weight:800;
+
+  color:#81778b;
+
+  min-width:65px;
+
   display:flex;
   flex-direction:column;
   align-items:center;
-  gap:3px;
-  position:relative;
+
+  gap:4px;
+
+  font-size:10px;
+  font-weight:900;
 }
 
 .nav-icon{
-  font-size:22px;
+  width:38px;
+  height:32px;
+
+  border-radius:12px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  font-size:21px;
 }
 
 .nav-btn.active{
-  color:#f26b00;
+  color:#6c2bd9;
 }
 
-.cart-badge{
+.nav-btn.active .nav-icon{
+  background:#eee4ff;
+}
+
+.nav-cart-badge{
   position:absolute;
-  top:-4px;
-  right:8px;
+
+  top:-3px;
+  right:10px;
+
   min-width:18px;
   height:18px;
+
   padding:0 4px;
+
   border-radius:20px;
-  background:#e53935;
-  color:#fff;
-  font-size:10px;
+
+  background:#ff3b30;
+
+  color:white;
+
+  border:2px solid white;
+
   display:none;
+
   align-items:center;
   justify-content:center;
-  border:2px solid #fff;
+
+  font-size:9px;
 }
 
-/* ================= DESKTOP ================= */
 
-@media(min-width:700px){
+/* =====================================================
+   MOBILE
+===================================================== */
 
-  .categories{
-    gap:16px;
+@media(max-width:430px){
+
+  .category-top{
+    height:112px;
   }
 
-  .category-image{
-    height:190px;
+  .category-bottom{
+    height:52px;
+    padding:6px;
+  }
+
+  .category-name{
+    font-size:10px;
+  }
+
+  .category-icon{
+    width:30px;
+    height:30px;
+    font-size:15px;
+  }
+
+  .category-arrow{
+    width:24px;
+    height:24px;
+    font-size:17px;
   }
 
   .hero{
-    height:300px;
+    min-height:245px;
   }
 
-  .products{
-    grid-template-columns:repeat(4,1fr);
+  .hero-content{
+    max-width:72%;
+    padding:22px 18px;
+  }
+
+  .hero-title{
+    font-size:27px;
+  }
+
+  .hero-image{
+    width:65%;
   }
 
   .product-image{
-    height:210px;
+    height:155px;
   }
+
 }
 
-/* SMALL PHONE */
 
-@media(max-width:390px){
+/* =====================================================
+   VERY SMALL PHONE
+===================================================== */
+
+@media(max-width:360px){
 
   .categories{
     gap:7px;
   }
 
-  .category-image{
-    height:105px;
-  }
-
-  .category-bottom{
-    height:55px;
-    padding:6px;
-  }
-
-  .category-icon{
-    width:32px;
-    height:32px;
-    font-size:16px;
+  .category-top{
+    height:95px;
   }
 
   .category-name{
-    font-size:11px;
+    font-size:9px;
   }
 
-  .arrow{
-    width:25px;
-    height:25px;
-    font-size:17px;
+  .category-icon{
+    width:27px;
+    height:27px;
+    font-size:13px;
   }
 
-  .hero{
-    height:220px;
+  .category-arrow{
+    display:none;
   }
 
   .hero-title{
-    font-size:25px;
+    font-size:24px;
   }
+
 }
+
 </style>
+
 </head>
+
 
 <body>
 
-<!-- ================= HEADER ================= -->
 
-<div class="header">
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header class="header">
 
   <div class="logo">
     ST
   </div>
 
-  <div>
-    <div class="shop-name">
+  <div class="brand">
+
+    <div class="brand-name">
       SAHIL T SHIRT PRINTING
     </div>
 
-    <div class="shop-sub">
-      Custom Printing • Gifts • Personalized Products
+    <div class="brand-sub">
+      Premium Custom Printing • Gifts • Personalized
     </div>
-  </div>
 
-</div>
-
-
-<!-- ================= LOCATION ================= -->
-
-<div class="location">
-
-  <div class="location-text">
-    📍 <span id="addressText">Add your delivery address</span>
   </div>
 
   <button
-    class="address-btn"
+    class="header-cart"
+    onclick="openCart()"
+    aria-label="Cart"
+  >
+
+    🛒
+
+    <span
+      class="cart-badge"
+      id="headerCartBadge"
+    >
+      0
+    </span>
+
+  </button>
+
+</header>
+
+
+
+<!-- =====================================================
+     ADDRESS
+===================================================== -->
+
+<div class="address-bar">
+
+  <div class="address-info">
+
+    <div class="location-icon">
+      📍
+    </div>
+
+    <div>
+
+      <div
+        class="address-text"
+        id="addressText"
+      >
+        Add your delivery address
+      </div>
+
+      <div class="address-small">
+        Delivery location
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <button
+    class="change-address"
     onclick="addAddress()"
   >
     + Address
@@ -664,11 +1183,14 @@ body{
 </div>
 
 
-<!-- ================= SEARCH ================= -->
+
+<!-- =====================================================
+     SEARCH
+===================================================== -->
 
 <div class="search-area">
 
-  <div class="search-box">
+  <div class="search">
 
     <div class="search-icon">
       🔍
@@ -686,27 +1208,86 @@ body{
 </div>
 
 
+
 <div class="container">
 
 
-<!-- ================= CATEGORIES ================= -->
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="hero-wrap">
+
+  <div class="hero">
+
+    <img
+      class="hero-image"
+      src="tshirt.jpg.png"
+      alt="Custom T-Shirt"
+    >
+
+    <div class="hero-overlay"></div>
+
+
+    <div class="hero-content">
+
+      <div class="hero-badge">
+        ✨ CUSTOM MADE FOR YOU
+      </div>
+
+      <div class="hero-title">
+        Your Design.<br>
+        <span>Your Style.</span> ❤️
+      </div>
+
+      <div class="hero-text">
+        Create premium personalised T-shirts,
+        mugs, gifts and caps.
+      </div>
+
+      <button
+        class="hero-btn"
+        onclick="openTshirt()"
+      >
+        Start Designing →
+      </button>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     CATEGORIES
+===================================================== -->
 
 <section
-  class="category-section"
+  class="section"
   id="categoriesSection"
 >
 
-  <div class="section-heading">
+  <div class="section-head">
 
-    <h2>
-      Categories
-    </h2>
+    <div>
+
+      <div class="section-title">
+        Explore Categories
+      </div>
+
+      <div class="section-sub">
+        Choose your favourite custom product
+      </div>
+
+    </div>
 
     <button
       class="see-all"
       onclick="showAll()"
     >
-      See All →
+      See All
     </button>
 
   </div>
@@ -718,13 +1299,14 @@ body{
     <!-- T SHIRT -->
 
     <button
-      class="category category-1"
+      class="category-card"
       onclick="openTshirt()"
     >
 
-      <div class="category-image">
+      <div class="category-top yellow">
 
         <img
+          class="category-img"
           src="tshirt.jpg.png"
           alt="T-Shirt"
         >
@@ -733,7 +1315,9 @@ body{
 
       <div class="category-bottom">
 
-        <div class="category-icon">
+        <div
+          class="category-icon yellow-icon"
+        >
           👕
         </div>
 
@@ -741,7 +1325,9 @@ body{
           T-Shirt
         </div>
 
-        <div class="arrow">
+        <div
+          class="category-arrow yellow-icon"
+        >
           ›
         </div>
 
@@ -753,13 +1339,14 @@ body{
     <!-- MUG -->
 
     <button
-      class="category category-2"
+      class="category-card"
       onclick="openMug()"
     >
 
-      <div class="category-image">
+      <div class="category-top pink">
 
         <img
+          class="category-img"
           src="mug.jpg.jpg"
           alt="Mug"
         >
@@ -768,7 +1355,9 @@ body{
 
       <div class="category-bottom">
 
-        <div class="category-icon">
+        <div
+          class="category-icon pink-icon"
+        >
           ☕
         </div>
 
@@ -776,7 +1365,9 @@ body{
           Mug
         </div>
 
-        <div class="arrow">
+        <div
+          class="category-arrow pink-icon"
+        >
           ›
         </div>
 
@@ -788,13 +1379,14 @@ body{
     <!-- GIFT -->
 
     <button
-      class="category category-3"
+      class="category-card"
       onclick="openGift()"
     >
 
-      <div class="category-image">
+      <div class="category-top purple">
 
         <img
+          class="category-img"
           src="gift.jpg.jpg"
           alt="Gift"
         >
@@ -803,7 +1395,9 @@ body{
 
       <div class="category-bottom">
 
-        <div class="category-icon">
+        <div
+          class="category-icon purple-icon"
+        >
           🎁
         </div>
 
@@ -811,7 +1405,9 @@ body{
           Gift
         </div>
 
-        <div class="arrow">
+        <div
+          class="category-arrow purple-icon"
+        >
           ›
         </div>
 
@@ -823,13 +1419,14 @@ body{
     <!-- CAP -->
 
     <button
-      class="category category-4"
+      class="category-card"
       onclick="openCap()"
     >
 
-      <div class="category-image">
+      <div class="category-top blue">
 
         <img
+          class="category-img"
           src="cap.jpg.jpg"
           alt="Cap"
         >
@@ -838,7 +1435,9 @@ body{
 
       <div class="category-bottom">
 
-        <div class="category-icon">
+        <div
+          class="category-icon blue-icon"
+        >
           🧢
         </div>
 
@@ -846,7 +1445,9 @@ body{
           Cap
         </div>
 
-        <div class="arrow">
+        <div
+          class="category-arrow blue-icon"
+        >
           ›
         </div>
 
@@ -854,64 +1455,98 @@ body{
 
     </button>
 
+
   </div>
 
 </section>
 
 
-<!-- ================= HERO ================= -->
 
-<div class="hero">
+<!-- =====================================================
+     FEATURES
+===================================================== -->
 
-  <img
-    src="tshirt.jpg.png"
-    alt="Custom T-Shirt"
-  >
+<div class="features">
 
-  <div class="hero-overlay"></div>
+  <div class="feature">
 
-  <div class="hero-content">
-
-    <div class="hero-small">
-      ✨ MADE JUST FOR YOU
+    <div class="feature-icon">
+      🎨
     </div>
 
-    <div class="hero-title">
-      Your Design.<br>
-      <span>Your Style.</span> ❤️
+    <div class="feature-title">
+      Your Design
     </div>
 
-    <div class="hero-text">
-      Custom printed T-shirts made specially for you.
+    <div class="feature-text">
+      Fully Custom
     </div>
 
-    <button
-      class="hero-btn"
-      onclick="openTshirt()"
-    >
-      Customize Now →
-    </button>
+  </div>
+
+
+  <div class="feature">
+
+    <div class="feature-icon">
+      ⚡
+    </div>
+
+    <div class="feature-title">
+      Fast Service
+    </div>
+
+    <div class="feature-text">
+      Quick Processing
+    </div>
+
+  </div>
+
+
+  <div class="feature">
+
+    <div class="feature-icon">
+      💜
+    </div>
+
+    <div class="feature-title">
+      Made With Care
+    </div>
+
+    <div class="feature-text">
+      Quality Printing
+    </div>
 
   </div>
 
 </div>
 
 
-<!-- ================= PRODUCTS ================= -->
 
-<section class="products-section">
+<!-- =====================================================
+     PRODUCTS
+===================================================== -->
 
-  <div class="section-heading">
+<section class="section">
 
-    <h2>
-      🔥 In Demand
-    </h2>
+  <div class="section-head">
+
+    <div>
+
+      <div class="section-title">
+        🔥 Popular Products
+      </div>
+
+      <div class="section-sub">
+        Most loved custom products
+      </div>
+
+    </div>
 
     <button
       class="see-all"
       onclick="showAll()"
     >
-      See All →
+      View All
     </button>
 
   </div>
@@ -927,498 +1562,10 @@ body{
 
     <div
       class="product"
-      data-name="tshirt t-shirt custom printed shirt"
+      data-name="tshirt t-shirt shirt custom printed"
       onclick="openTshirt()"
     >
 
       <div class="product-image">
 
-        <span class="hot">
-          🔥 Popular
-        </span>
-
-        <img
-          src="tshirt.jpg.png"
-          alt="Custom T-Shirt"
-        >
-
-      </div>
-
-      <div class="product-info">
-
-        <div class="product-name">
-          Custom T-Shirt
-        </div>
-
-        <div class="product-desc">
-          Your photo, logo or design
-        </div>
-
-        <div class="product-bottom">
-
-          <div class="product-price">
-            ₹299
-            <small>/ piece</small>
-          </div>
-
-          <button
-            class="add-btn"
-            onclick="event.stopPropagation();openTshirt()"
-          >
-            +
-          </button>
-
-        </div>
-
-      </div>
-
-    </div>
-
-
-    <!-- MUG -->
-
-    <div
-      class="product"
-      data-name="mug coffee cup custom printed mug"
-      onclick="openMug()"
-    >
-
-      <div class="product-image">
-
-        <span class="hot">
-          ⭐ Best
-        </span>
-
-        <img
-          src="mug.jpg.jpg"
-          alt="Custom Mug"
-        >
-
-      </div>
-
-      <div class="product-info">
-
-        <div class="product-name">
-          Custom Mug
-        </div>
-
-        <div class="product-desc">
-          Photo & personal message
-        </div>
-
-        <div class="product-bottom">
-
-          <div class="product-price">
-            ₹149
-            <small>/ piece</small>
-          </div>
-
-          <button
-            class="add-btn"
-            onclick="event.stopPropagation();openMug()"
-          >
-            +
-          </button>
-
-        </div>
-
-      </div>
-
-    </div>
-
-
-    <!-- GIFT -->
-
-    <div
-      class="product"
-      data-name="gift birthday anniversary custom gift"
-      onclick="openGift()"
-    >
-
-      <div class="product-image">
-
-        <span class="hot">
-          🎁 Special
-        </span>
-
-        <img
-          src="gift.jpg.jpg"
-          alt="Custom Gift"
-        >
-
-      </div>
-
-      <div class="product-info">
-
-        <div class="product-name">
-          Custom Gift
-        </div>
-
-        <div class="product-desc">
-          Perfect for special moments
-        </div>
-
-        <div class="product-bottom">
-
-          <div class="product-price">
-            ₹199
-            <small>/ piece</small>
-          </div>
-
-          <button
-            class="add-btn"
-            onclick="event.stopPropagation();openGift()"
-          >
-            +
-          </button>
-
-        </div>
-
-      </div>
-
-    </div>
-
-
-    <!-- CAP -->
-
-    <div
-      class="product"
-      data-name="cap custom printed cap logo"
-      onclick="openCap()"
-    >
-
-      <div class="product-image">
-
-        <span class="hot">
-          ✨ New
-        </span>
-
-        <img
-          src="cap.jpg.jpg"
-          alt="Custom Cap"
-        >
-
-      </div>
-
-      <div class="product-info">
-
-        <div class="product-name">
-          Custom Cap
-        </div>
-
-        <div class="product-desc">
-          Logo, photo & custom text
-        </div>
-
-        <div class="product-bottom">
-
-          <div class="product-price">
-            ₹199
-            <small>/ piece</small>
-          </div>
-
-          <button
-            class="add-btn"
-            onclick="event.stopPropagation();openCap()"
-          >
-            +
-          </button>
-
-        </div>
-
-      </div>
-
-    </div>
-
-
-  </div>
-
-
-  <div
-    class="no-result"
-    id="noResult"
-  >
-    😕 Product nahi mila.
-  </div>
-
-</section>
-
-</div>
-
-
-<!-- ================= BOTTOM NAV ================= -->
-
-<div class="bottom-nav">
-
-  <button
-    class="nav-btn active"
-    onclick="goHome()"
-  >
-
-    <div class="nav-icon">
-      🏠
-    </div>
-
-    Home
-
-  </button>
-
-
-  <button
-    class="nav-btn"
-    onclick="scrollCategories()"
-  >
-
-    <div class="nav-icon">
-      🗂️
-    </div>
-
-    Categories
-
-  </button>
-
-
-  <button
-    class="nav-btn"
-    onclick="openOrders()"
-  >
-
-    <div class="nav-icon">
-      📦
-    </div>
-
-    Orders
-
-  </button>
-
-
-  <button
-    class="nav-btn"
-    onclick="openCart()"
-  >
-
-    <div class="nav-icon">
-
-      🛒
-
-      <span
-        class="cart-badge"
-        id="cartBadge"
-      >
-        0
-      </span>
-
-    </div>
-
-    Cart
-
-  </button>
-
-</div>
-
-
-<script>
-
-/* ================= PRODUCT LINKS ================= */
-
-function openTshirt(){
-
-  window.location.href =
-    "customize.html";
-
-}
-
-function openMug(){
-
-  window.location.href =
-    "mug.html";
-
-}
-
-function openGift(){
-
-  window.location.href =
-    "gift.html";
-
-}
-
-function openCap(){
-
-  window.location.href =
-    "cap.html";
-
-}
-
-
-/* ================= CART ================= */
-
-function openCart(){
-
-  window.location.href =
-    "cart.html";
-
-}
-
-
-/* ================= ORDERS ================= */
-
-function openOrders(){
-
-  const cart =
-    localStorage.getItem("cartItem");
-
-  if(cart){
-
-    window.location.href =
-      "order.html";
-
-  }else{
-
-    alert(
-      "Abhi koi order nahi hai."
-    );
-
-  }
-
-}
-
-
-/* ================= HOME ================= */
-
-function goHome(){
-
-  window.scrollTo({
-    top:0,
-    behavior:"smooth"
-  });
-
-}
-
-
-/* ================= CATEGORIES ================= */
-
-function scrollCategories(){
-
-  document
-    .getElementById("categoriesSection")
-    .scrollIntoView({
-      behavior:"smooth"
-    });
-
-}
-
-
-/* ================= SEE ALL ================= */
-
-function showAll(){
-
-  document
-    .getElementById("searchInput")
-    .value = "";
-
-  searchProducts();
-
-}
-
-
-/* ================= SEARCH ================= */
-
-function searchProducts(){
-
-  const search =
-    document
-      .getElementById("searchInput")
-      .value
-      .toLowerCase()
-      .trim();
-
-
-  const products =
-    document.querySelectorAll(".product");
-
-
-  let found = 0;
-
-
-  products.forEach(function(product){
-
-    const name =
-      product
-        .getAttribute("data-name")
-        .toLowerCase();
-
-
-    if(
-      search === "" ||
-      name.includes(search)
-    ){
-
-      product.style.display =
-        "block";
-
-      found++;
-
-    }else{
-
-      product.style.display =
-        "none";
-
-    }
-
-  });
-
-
-  document.getElementById("noResult")
-    .style.display =
-    found === 0
-      ? "block"
-      : "none";
-
-}
-
-
-/* ================= ADDRESS ================= */
-
-function addAddress(){
-
-  const oldAddress =
-    localStorage.getItem(
-      "customerAddress"
-    ) || "";
-
-
-  const address =
-    prompt(
-      "Delivery address enter karein:",
-      oldAddress
-    );
-
-
-  if(
-    address !== null &&
-    address.trim() !== ""
-  ){
-
-    localStorage.setItem(
-      "customerAddress",
-      address.trim()
-    );
-
-    showAddress();
-
-  }
-
-}
-
-
-function showAddress(){
-
-  const address =
-    localStorage.getItem(
-      "customerAddress"
-    );
-
-
-  if(address){
-
-    document.getEl
+        <div class="product-ta
