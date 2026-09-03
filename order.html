@@ -1,0 +1,942 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Place Order - SAHIL T SHIRT PRINTING</title>
+
+<style>
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+  font-family:Arial,Helvetica,sans-serif;
+}
+
+body{
+  background:#f7f5ff;
+  color:#222;
+  padding-bottom:30px;
+}
+
+.header{
+  background:linear-gradient(135deg,#5b21b6,#7c3aed);
+  color:white;
+  padding:17px 16px;
+  position:sticky;
+  top:0;
+  z-index:20;
+  box-shadow:0 4px 15px rgba(0,0,0,.15);
+}
+
+.header-row{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+.back{
+  width:42px;
+  height:42px;
+  border:none;
+  border-radius:13px;
+  background:rgba(255,255,255,.18);
+  color:white;
+  font-size:23px;
+  cursor:pointer;
+}
+
+.header h1{
+  font-size:21px;
+  font-weight:800;
+}
+
+.header p{
+  font-size:12px;
+  opacity:.85;
+  margin-top:3px;
+}
+
+.container{
+  max-width:650px;
+  margin:auto;
+  padding:16px;
+}
+
+.card{
+  background:white;
+  border-radius:22px;
+  padding:18px;
+  box-shadow:0 5px 22px rgba(76,29,149,.10);
+  margin-bottom:18px;
+}
+
+.title{
+  color:#4c1d95;
+  font-size:18px;
+  font-weight:900;
+  margin-bottom:16px;
+}
+
+.field{
+  margin-bottom:16px;
+}
+
+label{
+  display:block;
+  font-size:14px;
+  font-weight:700;
+  margin-bottom:7px;
+}
+
+input,
+textarea{
+  width:100%;
+  border:2px solid #e9e2ff;
+  background:#faf9ff;
+  border-radius:13px;
+  padding:13px;
+  font-size:15px;
+  outline:none;
+}
+
+input:focus,
+textarea:focus{
+  border-color:#7c3aed;
+}
+
+textarea{
+  min-height:95px;
+  resize:vertical;
+}
+
+.required{
+  color:#dc2626;
+}
+
+.order-product{
+  display:flex;
+  gap:13px;
+  align-items:center;
+}
+
+.product-image{
+  width:85px;
+  height:85px;
+  object-fit:cover;
+  border-radius:14px;
+  background:#eee;
+}
+
+.product-name{
+  font-size:17px;
+  font-weight:800;
+  color:#3b176d;
+  margin-bottom:6px;
+}
+
+.product-details{
+  color:#666;
+  font-size:13px;
+  line-height:1.6;
+}
+
+.total-box{
+  background:linear-gradient(135deg,#fff7cc,#fff1a8);
+  border:2px solid #facc15;
+  border-radius:18px;
+  padding:17px;
+}
+
+.total-row{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.total-label{
+  font-size:15px;
+  font-weight:700;
+}
+
+.total-price{
+  font-size:26px;
+  font-weight:900;
+  color:#5b21b6;
+}
+
+.whatsapp-btn{
+  width:100%;
+  border:none;
+  margin-top:5px;
+  padding:16px;
+  border-radius:16px;
+  background:#25D366;
+  color:white;
+  font-size:17px;
+  font-weight:900;
+  cursor:pointer;
+  box-shadow:0 6px 18px rgba(37,211,102,.25);
+}
+
+.whatsapp-btn:active{
+  transform:scale(.98);
+}
+
+.back-cart{
+  width:100%;
+  border:2px solid #7c3aed;
+  margin-top:10px;
+  padding:14px;
+  border-radius:15px;
+  background:white;
+  color:#6d28d9;
+  font-size:15px;
+  font-weight:800;
+  cursor:pointer;
+}
+
+.note{
+  text-align:center;
+  color:#777;
+  font-size:12px;
+  line-height:1.6;
+  margin-top:14px;
+}
+
+.empty{
+  background:white;
+  border-radius:22px;
+  padding:40px 20px;
+  text-align:center;
+  box-shadow:0 5px 22px rgba(76,29,149,.10);
+}
+
+.empty-icon{
+  font-size:60px;
+  margin-bottom:14px;
+}
+
+.empty h2{
+  color:#4c1d95;
+  margin-bottom:8px;
+}
+
+.empty p{
+  color:#777;
+  font-size:14px;
+  margin-bottom:20px;
+}
+
+.home-btn{
+  border:none;
+  background:linear-gradient(135deg,#facc15,#f59e0b);
+  color:#351000;
+  padding:14px 25px;
+  border-radius:14px;
+  font-size:15px;
+  font-weight:900;
+  cursor:pointer;
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<div class="header">
+
+  <div class="header-row">
+
+    <button class="back" onclick="goBack()">
+      ‹
+    </button>
+
+    <div>
+      <h1>📦 Place Your Order</h1>
+      <p>Apni delivery details enter karein</p>
+    </div>
+
+  </div>
+
+</div>
+
+
+<div class="container">
+
+  <!-- PRODUCT -->
+
+  <div class="card" id="productCard">
+
+    <div class="title">
+      🛍️ Your Product
+    </div>
+
+    <div id="productDetails"></div>
+
+  </div>
+
+
+  <!-- CUSTOMER DETAILS -->
+
+  <div class="card">
+
+    <div class="title">
+      👤 Customer Details
+    </div>
+
+
+    <div class="field">
+
+      <label>
+        Full Name <span class="required">*</span>
+      </label>
+
+      <input
+        type="text"
+        id="customerName"
+        placeholder="Apna full name enter karein"
+        maxlength="60"
+      >
+
+    </div>
+
+
+    <div class="field">
+
+      <label>
+        Mobile Number <span class="required">*</span>
+      </label>
+
+      <input
+        type="tel"
+        id="mobile"
+        placeholder="10 digit mobile number"
+        maxlength="10"
+        inputmode="numeric"
+      >
+
+    </div>
+
+
+    <div class="field">
+
+      <label>
+        Full Address <span class="required">*</span>
+      </label>
+
+      <textarea
+        id="address"
+        placeholder="House no., street, area, landmark..."
+        maxlength="250"
+      ></textarea>
+
+    </div>
+
+
+    <div class="field">
+
+      <label>
+        City <span class="required">*</span>
+      </label>
+
+      <input
+        type="text"
+        id="city"
+        placeholder="City"
+        maxlength="50"
+      >
+
+    </div>
+
+
+    <div class="field">
+
+      <label>
+        PIN Code <span class="required">*</span>
+      </label>
+
+      <input
+        type="tel"
+        id="pincode"
+        placeholder="6 digit PIN code"
+        maxlength="6"
+        inputmode="numeric"
+      >
+
+    </div>
+
+
+    <div class="field" style="margin-bottom:0;">
+
+      <label>
+        Extra Note
+      </label>
+
+      <textarea
+        id="customerNote"
+        placeholder="Delivery ke liye koi extra information..."
+        maxlength="200"
+      ></textarea>
+
+    </div>
+
+  </div>
+
+
+  <!-- TOTAL -->
+
+  <div class="card">
+
+    <div class="total-box">
+
+      <div class="total-row">
+
+        <div>
+          <div class="total-label">
+            💰 Order Total
+          </div>
+
+          <div style="font-size:12px;color:#777;margin-top:4px;">
+            Product price
+          </div>
+        </div>
+
+        <div
+          class="total-price"
+          id="totalPrice"
+        >
+          ₹0
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <button
+      class="whatsapp-btn"
+      onclick="confirmOrder()"
+    >
+      🟢 Confirm Order on WhatsApp
+    </button>
+
+
+    <button
+      class="back-cart"
+      onclick="goCart()"
+    >
+      ← Back to Cart
+    </button>
+
+
+    <div class="note">
+      📱 Order confirm karne ke baad WhatsApp open hoga.<br>
+      Wahan se aap directly shop ko order details bhej sakte hain.
+    </div>
+
+  </div>
+
+</div>
+
+
+<script>
+
+const WHATSAPP_NUMBER = "918250366736";
+
+let orderItem = null;
+
+
+/* LOAD ORDER */
+
+function loadOrder(){
+
+  const savedOrder =
+    localStorage.getItem("orderItem");
+
+  const productDetails =
+    document.getElementById("productDetails");
+
+  if(!savedOrder){
+
+    document.getElementById("productCard").innerHTML = `
+
+      <div class="empty">
+
+        <div class="empty-icon">
+          📦
+        </div>
+
+        <h2>No Order Found</h2>
+
+        <p>
+          Pehle cart mein product add karein.
+        </p>
+
+        <button
+          class="home-btn"
+          onclick="goHome()"
+        >
+          🛍️ Start Shopping
+        </button>
+
+      </div>
+
+    `;
+
+    return;
+  }
+
+
+  try{
+
+    orderItem =
+      JSON.parse(savedOrder);
+
+    showProduct();
+
+  }catch(error){
+
+    localStorage.removeItem("orderItem");
+
+    goHome();
+  }
+}
+
+
+/* SHOW PRODUCT */
+
+function showProduct(){
+
+  const quantity =
+    parseInt(orderItem.quantity) || 1;
+
+  const unitPrice =
+    parseInt(orderItem.unitPrice) || 0;
+
+  const total =
+    unitPrice * quantity;
+
+
+  let details = "";
+
+
+  if(orderItem.color){
+    details +=
+      "🎨 " +
+      escapeHTML(orderItem.color) +
+      " • ";
+  }
+
+
+  if(orderItem.size){
+    details +=
+      "📏 Size " +
+      escapeHTML(orderItem.size) +
+      " • ";
+  }
+
+
+  if(orderItem.capStyle){
+    details +=
+      "🧢 " +
+      escapeHTML(orderItem.capStyle) +
+      " • ";
+  }
+
+
+  if(orderItem.mugType){
+    details +=
+      "☕ " +
+      escapeHTML(orderItem.mugType) +
+      " • ";
+  }
+
+
+  if(orderItem.giftType){
+    details +=
+      "🎁 " +
+      escapeHTML(orderItem.giftType) +
+      " • ";
+  }
+
+
+  details +=
+    "Qty " + quantity;
+
+
+  document.getElementById("productDetails").innerHTML = `
+
+    <div class="order-product">
+
+      <img
+        src="${orderItem.image || 'tshirt.jpg.png'}"
+        class="product-image"
+        alt="Product"
+        onerror="this.src='tshirt.jpg.png'"
+      >
+
+      <div>
+
+        <div class="product-name">
+          ${escapeHTML(
+            orderItem.product ||
+            "Custom Product"
+          )}
+        </div>
+
+        <div class="product-details">
+          ${details}
+        </div>
+
+      </div>
+
+    </div>
+
+  `;
+
+
+  document.getElementById("totalPrice").innerText =
+    "₹" + total;
+}
+
+
+/* CONFIRM ORDER */
+
+function confirmOrder(){
+
+  if(!orderItem){
+
+    alert("📦 Order details nahi mile.");
+
+    return;
+  }
+
+
+  const name =
+    document.getElementById("customerName")
+    .value.trim();
+
+  const mobile =
+    document.getElementById("mobile")
+    .value.trim();
+
+  const address =
+    document.getElementById("address")
+    .value.trim();
+
+  const city =
+    document.getElementById("city")
+    .value.trim();
+
+  const pincode =
+    document.getElementById("pincode")
+    .value.trim();
+
+  const customerNote =
+    document.getElementById("customerNote")
+    .value.trim();
+
+
+  /* VALIDATION */
+
+  if(!name){
+
+    alert("👤 Please apna name enter karein.");
+
+    document.getElementById("customerName").focus();
+
+    return;
+  }
+
+
+  if(!/^[0-9]{10}$/.test(mobile)){
+
+    alert("📱 Please valid 10 digit mobile number enter karein.");
+
+    document.getElementById("mobile").focus();
+
+    return;
+  }
+
+
+  if(!address){
+
+    alert("🏠 Please full address enter karein.");
+
+    document.getElementById("address").focus();
+
+    return;
+  }
+
+
+  if(!city){
+
+    alert("📍 Please city enter karein.");
+
+    document.getElementById("city").focus();
+
+    return;
+  }
+
+
+  if(!/^[0-9]{6}$/.test(pincode)){
+
+    alert("📍 Please valid 6 digit PIN code enter karein.");
+
+    document.getElementById("pincode").focus();
+
+    return;
+  }
+
+
+  const quantity =
+    parseInt(orderItem.quantity) || 1;
+
+  const unitPrice =
+    parseInt(orderItem.unitPrice) || 0;
+
+  const total =
+    unitPrice * quantity;
+
+
+  /* PRODUCT DETAILS */
+
+  let productInfo =
+    orderItem.product ||
+    "Custom Product";
+
+
+  if(orderItem.color){
+
+    productInfo +=
+      "\n🎨 Color: " +
+      orderItem.color;
+  }
+
+
+  if(orderItem.size){
+
+    productInfo +=
+      "\n📏 Size: " +
+      orderItem.size;
+  }
+
+
+  if(orderItem.capStyle){
+
+    productInfo +=
+      "\n🧢 Cap Style: " +
+      orderItem.capStyle;
+  }
+
+
+  if(orderItem.mugType){
+
+    productInfo +=
+      "\n☕ Mug Type: " +
+      orderItem.mugType;
+  }
+
+
+  if(orderItem.giftType){
+
+    productInfo +=
+      "\n🎁 Gift Type: " +
+      orderItem.giftType;
+  }
+
+
+  if(orderItem.giftWrap){
+
+    productInfo +=
+      "\n🎀 Gift Wrap: Yes";
+  }
+
+
+  if(orderItem.customText){
+
+    productInfo +=
+      "\n✍️ Custom Text: " +
+      orderItem.customText;
+  }
+
+
+  if(orderItem.message){
+
+    productInfo +=
+      "\n💌 Message: " +
+      orderItem.message;
+  }
+
+
+  if(orderItem.giftMessage){
+
+    productInfo +=
+      "\n💌 Gift Message: " +
+      orderItem.giftMessage;
+  }
+
+
+  if(orderItem.orderNote){
+
+    productInfo +=
+      "\n📝 Product Note: " +
+      orderItem.orderNote;
+  }
+
+
+  /* WHATSAPP MESSAGE */
+
+  let message =
+`🛍️ *NEW ORDER*
+
+━━━━━━━━━━━━━━
+
+📦 *PRODUCT*
+${productInfo}
+
+🔢 Quantity: ${quantity}
+💰 Unit Price: ₹${unitPrice}
+💵 *TOTAL: ₹${total}*
+
+━━━━━━━━━━━━━━
+
+👤 *CUSTOMER DETAILS*
+
+Name: ${name}
+Mobile: ${mobile}
+
+🏠 Address:
+${address}
+
+📍 City: ${city}
+📮 PIN Code: ${pincode}`;
+
+
+  if(customerNote){
+
+    message +=
+`
+    
+📝 Customer Note:
+${customerNote}`;
+  }
+
+
+  message +=
+`
+
+━━━━━━━━━━━━━━
+
+🙏 Thank you!
+SAHIL T SHIRT PRINTING`;
+
+
+  const whatsappURL =
+    "https://wa.me/" +
+    WHATSAPP_NUMBER +
+    "?text=" +
+    encodeURIComponent(message);
+
+
+  /*
+    Save customer/order details
+  */
+
+  const finalOrder = {
+
+    ...orderItem,
+
+    customerName: name,
+
+    mobile: mobile,
+
+    address: address,
+
+    city: city,
+
+    pincode: pincode,
+
+    customerNote: customerNote,
+
+    orderTotal: total,
+
+    orderDate:
+      new Date().toLocaleString()
+
+  };
+
+
+  localStorage.setItem(
+    "finalOrder",
+    JSON.stringify(finalOrder)
+  );
+
+
+  /*
+    Open WhatsApp
+  */
+
+  window.location.href =
+    whatsappURL;
+}
+
+
+/* BACK TO CART */
+
+function goCart(){
+
+  window.location.href =
+    "cart.html";
+}
+
+
+/* HOME */
+
+function goHome(){
+
+  window.location.href =
+    "index.html";
+}
+
+
+/* HEADER BACK */
+
+function goBack(){
+
+  window.location.href =
+    "cart.html";
+}
+
+
+/* HTML SAFETY */
+
+function escapeHTML(value){
+
+  if(value === null ||
+     value === undefined){
+
+    return "";
+  }
+
+
+  return String(value)
+    .replace(/&/g,"&amp;")
+    .replace(/</g,"&lt;")
+    .replace(/>/g,"&gt;")
+    .replace(/"/g,"&quot;")
+    .replace(/'/g,"&#039;");
+}
+
+
+/* START */
+
+loadOrder();
+
+</script>
+
+</body>
+</html>
