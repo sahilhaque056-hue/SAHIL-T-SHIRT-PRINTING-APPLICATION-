@@ -3,157 +3,149 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>SAHIL T SHIRT PRINTING</title>
 
 <style>
+
 *{
-  box-sizing:border-box;
   margin:0;
   padding:0;
+  box-sizing:border-box;
   font-family:Arial,Helvetica,sans-serif;
 }
 
 body{
-  background:#f5f6f8;
-  color:#202124;
-  padding-bottom:82px;
+  background:#f5f6f7;
+  color:#222;
+  padding-bottom:90px;
 }
 
-/* TOP HEADER */
+/* HEADER */
+
 .header{
-  background:#fff;
-  padding:14px 14px 12px;
-  position:sticky;
-  top:0;
-  z-index:100;
-  box-shadow:0 2px 10px rgba(0,0,0,.08);
-}
-
-.top{
+  background:white;
+  padding:22px 24px 15px;
   display:flex;
   align-items:center;
   justify-content:space-between;
 }
 
-.brand{
+.logo-area{
   display:flex;
   align-items:center;
+  gap:15px;
+}
+
+.logo{
+  width:78px;
+  height:78px;
+  background:#ff6500;
+  border-radius:22px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:43px;
+  box-shadow:0 4px 10px rgba(0,0,0,.08);
+}
+
+.shop-name{
+  font-size:22px;
+  font-weight:800;
+}
+
+.shop-sub{
+  margin-top:5px;
+  color:#777;
+  font-size:14px;
+}
+
+.header-buttons{
+  display:flex;
   gap:10px;
 }
 
-.brand-logo{
-  width:44px;
-  height:44px;
-  border-radius:13px;
-  background:#ff5a00;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:24px;
-}
-
-.brand-name{
-  font-size:16px;
-  font-weight:900;
-}
-
-.brand-sub{
-  font-size:10px;
-  color:#777;
-  margin-top:3px;
-}
-
-.top-actions{
-  display:flex;
-  gap:8px;
-}
-
-.top-btn{
-  width:40px;
-  height:40px;
+.header-btn{
+  width:58px;
+  height:58px;
   border:0;
-  border-radius:12px;
-  background:#f2f3f5;
-  font-size:20px;
+  border-radius:18px;
+  background:#f3f4f5;
+  font-size:27px;
   position:relative;
 }
 
-.badge{
+.cart-badge{
   position:absolute;
-  top:-5px;
-  right:-4px;
-  background:#ff3030;
-  color:#fff;
-  font-size:10px;
-  font-weight:bold;
-  min-width:18px;
-  height:18px;
+  right:-3px;
+  top:-6px;
+  width:28px;
+  height:28px;
   border-radius:50%;
-  display:none;
-  align-items:center;
-  justify-content:center;
-}
-
-/* ADDRESS */
-.address{
-  margin-top:11px;
-  background:#edf5ff;
-  border-radius:12px;
-  height:42px;
+  background:#ed1c24;
+  color:white;
+  font-size:14px;
   display:flex;
   align-items:center;
-  gap:7px;
-  padding:0 12px;
-  font-size:13px;
+  justify-content:center;
+  font-weight:bold;
 }
 
-.address a{
-  color:#222;
+/* LOCATION */
+
+.location{
+  margin:4px 24px 20px;
+  background:#eaf4ff;
+  border-radius:22px;
+  padding:20px;
+  font-size:18px;
   font-weight:bold;
+}
+
+.location span{
   text-decoration:underline;
+  margin-left:8px;
+  cursor:pointer;
 }
 
 /* SEARCH */
-.search{
-  margin-top:11px;
-  height:54px;
-  background:#fff;
-  border:2px solid #ff6b1a;
-  border-radius:16px;
+
+.search-box{
+  margin:0 24px 20px;
+  height:95px;
+  background:white;
+  border:3px solid #f27622;
+  border-radius:28px;
   display:flex;
   align-items:center;
-  padding:0 13px;
-  gap:9px;
+  padding:0 22px;
+  gap:15px;
 }
 
-.search span{
-  font-size:27px;
+.search-icon{
+  font-size:34px;
 }
 
-.search input{
-  flex:1;
+.search-box input{
   border:0;
-  outline:0;
-  height:100%;
-  font-size:15px;
-  background:transparent;
+  outline:none;
+  width:100%;
+  font-size:25px;
+  color:#333;
 }
 
-.search button{
-  border:0;
-  background:none;
-  font-size:20px;
-  display:none;
+.search-box input::placeholder{
+  color:#888;
 }
 
-/* CATEGORY */
+/* CATEGORIES */
+
 .categories{
-  background:#fff;
+  background:white;
+  padding:5px 20px 18px;
   display:flex;
-  gap:16px;
-  padding:13px 14px 10px;
+  gap:20px;
   overflow-x:auto;
-  scrollbar-width:none;
 }
 
 .categories::-webkit-scrollbar{
@@ -161,919 +153,988 @@ body{
 }
 
 .category{
-  min-width:68px;
+  min-width:100px;
   text-align:center;
+  cursor:pointer;
 }
 
-.cat-img{
-  width:60px;
-  height:60px;
-  margin:auto;
-  border-radius:16px;
-  background:#f4f4f4;
+.category-img{
+  width:90px;
+  height:90px;
+  border-radius:22px;
+  object-fit:cover;
+  background:#f2f2f2;
+}
+
+.category-name{
+  margin-top:8px;
+  font-weight:bold;
+  font-size:16px;
+}
+
+/* BANNER */
+
+.banner{
+  margin:25px 24px;
+  min-height:360px;
+  border-radius:32px;
   overflow:hidden;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  border:1px solid #eee;
+  background:linear-gradient(135deg,#47200d,#a83b08);
+  color:white;
+  position:relative;
 }
 
-.cat-img img{
-  width:100%;
+.banner-content{
+  padding:40px 20px;
+  width:52%;
+  position:relative;
+  z-index:2;
+}
+
+.banner-small{
+  font-size:18px;
+  font-weight:bold;
+  margin-bottom:22px;
+}
+
+.banner h1{
+  font-size:38px;
+  line-height:1.05;
+  margin-bottom:20px;
+}
+
+.banner p{
+  font-size:16px;
+  line-height:1.5;
+  margin-bottom:25px;
+}
+
+.banner-btn{
+  background:white;
+  color:#222;
+  border:0;
+  border-radius:17px;
+  padding:16px 22px;
+  font-size:17px;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+.banner-image{
+  position:absolute;
+  right:0;
+  top:0;
+  width:52%;
   height:100%;
   object-fit:cover;
 }
 
-.cat-icon{
-  font-size:28px;
-}
+/* SLIDER DOTS */
 
-.cat-name{
-  font-size:11px;
-  font-weight:bold;
-  margin-top:6px;
-  white-space:nowrap;
-}
-
-/* HERO */
-.hero{
-  margin:14px 14px 0;
-  height:205px;
-  border-radius:22px;
-  overflow:hidden;
-  position:relative;
-  background:linear-gradient(135deg,#151515,#ff5a00);
-}
-
-.hero-text{
-  position:absolute;
-  z-index:2;
-  left:19px;
-  top:23px;
-  color:#fff;
-  width:58%;
-}
-
-.hero-small{
-  font-size:11px;
-  font-weight:bold;
-}
-
-.hero-title{
-  font-size:28px;
-  font-weight:900;
-  line-height:1.05;
-  margin-top:8px;
-}
-
-.hero-desc{
-  font-size:12px;
-  line-height:1.4;
-  margin-top:8px;
-}
-
-.hero button{
-  margin-top:13px;
-  border:0;
-  background:#fff;
-  color:#111;
-  padding:10px 15px;
-  border-radius:10px;
-  font-weight:800;
-  font-size:12px;
-}
-
-.hero img{
-  position:absolute;
-  right:-10px;
-  bottom:-12px;
-  width:48%;
-  height:95%;
-  object-fit:contain;
-}
-
-/* DOTS */
 .dots{
   display:flex;
   justify-content:center;
-  gap:5px;
-  margin:9px 0 17px;
+  gap:10px;
+  margin-top:-15px;
+  margin-bottom:25px;
 }
 
 .dot{
-  width:7px;
-  height:7px;
-  border-radius:10px;
+  width:12px;
+  height:12px;
   background:#ccc;
+  border-radius:50%;
 }
 
 .dot.active{
-  width:20px;
-  background:#ff5a00;
+  width:36px;
+  border-radius:10px;
+  background:#ff6500;
 }
 
 /* SECTION */
-.section{
-  margin:0 14px 18px;
-}
 
-.section-head{
+.section-title{
+  padding:0 24px 15px;
   display:flex;
   justify-content:space-between;
   align-items:center;
-  margin-bottom:12px;
 }
 
-.section-title{
-  font-size:21px;
-  font-weight:900;
+.section-title h2{
+  font-size:30px;
 }
 
-.see{
-  color:#ff5a00;
-  font-size:12px;
+.see-all{
+  color:#ed6b16;
+  font-size:18px;
   font-weight:bold;
-}
-
-/* IN DEMAND */
-.demand{
-  background:#dff6ed;
-  border-radius:22px;
-  padding:14px;
-}
-
-.demand-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:11px;
-}
-
-.demand-card{
-  background:#fff;
-  border-radius:16px;
-  padding:8px;
-}
-
-.demand-img{
-  height:145px;
-  background:#f5f5f5;
-  border-radius:12px;
-  overflow:hidden;
-}
-
-.demand-img img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-}
-
-.demand-name{
-  margin-top:9px;
-  font-size:13px;
-}
-
-.demand-price{
-  margin-top:4px;
-  font-size:17px;
-  font-weight:900;
+  cursor:pointer;
 }
 
 /* PRODUCTS */
+
+.products-area{
+  margin:0 24px;
+  padding:25px 15px;
+  background:#dff8ee;
+  border-radius:30px;
+}
+
 .products{
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:12px;
+  gap:15px;
 }
 
-.card{
-  background:#fff;
-  border-radius:18px;
-  padding:9px;
-  box-shadow:0 2px 10px rgba(0,0,0,.06);
-}
-
-.product-img{
-  height:175px;
-  background:#f5f5f5;
-  border-radius:13px;
+.product{
+  background:white;
+  border-radius:25px;
+  padding:12px;
   overflow:hidden;
-  position:relative;
 }
 
-.product-img img{
+.product-image{
   width:100%;
-  height:100%;
+  height:210px;
   object-fit:cover;
-}
-
-.tag{
-  position:absolute;
-  top:8px;
-  left:7px;
-  background:#ff5a00;
-  color:white;
-  padding:5px 7px;
-  border-radius:6px;
-  font-size:9px;
-  font-weight:bold;
+  border-radius:18px;
+  background:#f3f3f3;
 }
 
 .product-name{
-  font-size:14px;
-  font-weight:800;
-  margin-top:10px;
-}
-
-.product-desc{
-  color:#888;
-  font-size:10px;
-  margin-top:4px;
-}
-
-.price{
   font-size:17px;
-  font-weight:900;
-  margin-top:7px;
+  font-weight:bold;
+  margin:12px 4px 4px;
 }
 
-.old{
-  color:#999;
-  font-size:10px;
-  text-decoration:line-through;
-  font-weight:normal;
-  margin-left:4px;
+.product-price{
+  font-size:20px;
+  font-weight:800;
+  margin:0 4px 12px;
 }
 
 .product-btn{
   width:100%;
-  height:39px;
-  margin-top:9px;
-  border:1px solid #ff5a00;
-  border-radius:10px;
-  background:#fff;
-  color:#ff5a00;
-  font-weight:800;
+  border:0;
+  background:#ff6500;
+  color:white;
+  padding:13px 8px;
+  border-radius:14px;
+  font-size:15px;
+  font-weight:bold;
+  cursor:pointer;
 }
 
-.product-btn.main{
-  background:#ff5a00;
-  color:#fff;
-}
-
-/* INFO */
-.info{
-  background:#fff;
-  margin:0 14px 20px;
-  padding:19px;
-  text-align:center;
-  border-radius:19px;
-}
-
-.info h3{
-  font-size:17px;
-}
-
-.info p{
-  color:#777;
-  font-size:12px;
-  line-height:1.6;
-  margin-top:7px;
-}
-
-/* EMPTY SEARCH */
-.empty{
-  display:none;
-  text-align:center;
-  padding:45px 20px;
-}
-
-.empty div{
-  font-size:45px;
-}
-
-.empty h3{
-  margin-top:8px;
-}
-
-.empty p{
-  color:#777;
-  font-size:12px;
-  margin-top:5px;
+.product-btn:active,
+.banner-btn:active,
+.header-btn:active{
+  transform:scale(.96);
 }
 
 /* BOTTOM NAV */
-.bottom{
+
+.bottom-nav{
   position:fixed;
+  bottom:0;
   left:0;
   right:0;
-  bottom:0;
-  height:72px;
-  background:#fff;
+  height:88px;
+  background:white;
   border-top:1px solid #ddd;
   display:flex;
-  z-index:200;
-  box-shadow:0 -3px 14px rgba(0,0,0,.08);
+  justify-content:space-around;
+  align-items:center;
+  z-index:999;
 }
 
-.nav{
-  flex:1;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  gap:4px;
+.nav-item{
+  text-align:center;
   color:#666;
-  font-size:10px;
-  font-weight:600;
-  position:relative;
+  font-size:14px;
+  cursor:pointer;
 }
 
 .nav-icon{
-  font-size:23px;
+  display:block;
+  font-size:30px;
+  margin-bottom:4px;
 }
 
-.nav.active{
-  color:#ff5a00;
+.nav-item.active{
+  color:#ed6b16;
+  font-weight:bold;
 }
 
-.nav-badge{
-  position:absolute;
-  top:8px;
-  margin-left:27px;
-  width:17px;
-  height:17px;
-  border-radius:50%;
-  background:#ff3030;
-  color:#fff;
-  font-size:9px;
+/* NO RESULTS */
+
+.no-result{
   display:none;
-  align-items:center;
-  justify-content:center;
+  text-align:center;
+  padding:40px 20px;
+  color:#777;
+  font-size:18px;
 }
 
-@media(max-width:380px){
-  .hero{
-    height:185px;
+/* MOBILE */
+
+@media(max-width:500px){
+
+  .shop-name{
+    font-size:20px;
   }
 
-  .hero-title{
-    font-size:24px;
+  .shop-sub{
+    font-size:13px;
   }
 
-  .product-img{
-    height:155px;
+  .logo{
+    width:68px;
+    height:68px;
+    font-size:38px;
   }
 
-  .demand-img{
-    height:125px;
+  .header-btn{
+    width:52px;
+    height:52px;
   }
+
+  .banner{
+    min-height:330px;
+  }
+
+  .banner h1{
+    font-size:32px;
+  }
+
+  .banner-content{
+    padding:30px 18px;
+  }
+
+  .product-image{
+    height:170px;
+  }
+
 }
+
 </style>
 </head>
 
 <body>
 
 <!-- HEADER -->
+
 <header class="header">
 
-  <div class="top">
+  <div class="logo-area">
 
-    <div class="brand">
-      <div class="brand-logo">👕</div>
+    <div class="logo">
+      👕
+    </div>
 
-      <div>
-        <div class="brand-name">SAHIL T SHIRT PRINTING</div>
-        <div class="brand-sub">Custom Printing • Gifts • More</div>
+    <div>
+      <div class="shop-name">
+        SAHIL T SHIRT PRINTING
+      </div>
+
+      <div class="shop-sub">
+        Custom Printing • Gifts • More
       </div>
     </div>
 
-    <div class="top-actions">
-
-      <button class="top-btn" onclick="showOrders()">📦</button>
-
-      <button class="top-btn" onclick="openCart()">
-        🛒
-        <span class="badge" id="cartBadge">0</span>
-      </button>
-
-    </div>
-
   </div>
 
-  <div class="address">
-    📍 <b>Your Location</b>
-    <a href="#" onclick="addressAlert();return false;">Add address</a>
-  </div>
+  <div class="header-buttons">
 
-  <div class="search">
+    <button class="header-btn"
+      onclick="openOrders()">
+      📦
+    </button>
 
-    <span>⌕</span>
+    <button class="header-btn"
+      onclick="openCart()">
 
-    <input
-      id="searchInput"
-      type="search"
-      placeholder="Search T-Shirts, Mugs, Gifts..."
-    >
+      🛒
 
-    <button id="clearBtn">×</button>
+      <span class="cart-badge" id="cartBadge">
+        0
+      </span>
+
+    </button>
 
   </div>
 
 </header>
 
 
+<!-- LOCATION -->
+
+<div class="location">
+
+  📍 Your Location
+
+  <span onclick="addAddress()">
+    Add address
+  </span>
+
+</div>
+
+
+<!-- SEARCH -->
+
+<div class="search-box">
+
+  <div class="search-icon">
+    🔍
+  </div>
+
+  <input
+    type="text"
+    id="searchInput"
+    placeholder="Search T-Shirts, Mugs, Gifts..."
+    oninput="searchProducts()"
+  >
+
+</div>
+
+
 <!-- CATEGORIES -->
+
 <div class="categories">
 
-  <div class="category" onclick="filterProducts('tshirt')">
-    <div class="cat-img">
-      <img src="tshirt.jpg.png" alt="T-Shirt">
+  <div class="category"
+       onclick="openTshirt()">
+
+    <img
+      src="tshirt.jpg.png"
+      class="category-img">
+
+    <div class="category-name">
+      T-Shirts
     </div>
-    <div class="cat-name">T-Shirts</div>
+
   </div>
 
-  <div class="category" onclick="filterProducts('mug')">
-    <div class="cat-img">
-      <img src="mug.jpg.jpg" alt="Mug">
+
+  <div class="category"
+       onclick="openMug()">
+
+    <img
+      src="mug.jpg.jpg"
+      class="category-img">
+
+    <div class="category-name">
+      Mugs
     </div>
-    <div class="cat-name">Mugs</div>
+
   </div>
 
-  <div class="category" onclick="filterProducts('gift')">
-    <div class="cat-img">
-      <img src="gift.jpg.jpg" alt="Gift">
+
+  <div class="category"
+       onclick="openGift()">
+
+    <img
+      src="gift.jpg.jpg"
+      class="category-img">
+
+    <div class="category-name">
+      Gifts
     </div>
-    <div class="cat-name">Gifts</div>
+
   </div>
 
-  <div class="category" onclick="filterProducts('cap')">
-    <div class="cat-img">
-      <img src="cap.jpg.jpg" alt="Cap">
+
+  <div class="category"
+       onclick="openCap()">
+
+    <img
+      src="cap.jpg.jpg"
+      class="category-img">
+
+    <div class="category-name">
+      Caps
     </div>
-    <div class="cat-name">Caps</div>
+
   </div>
 
-  <div class="category" onclick="filterProducts('custom')">
-    <div class="cat-img">
-      <div class="cat-icon">🎨</div>
-    </div>
-    <div class="cat-name">Custom</div>
-  </div>
 
-  <div class="category" onclick="filterProducts('printing')">
-    <div class="cat-img">
-      <div class="cat-icon">🖨️</div>
+  <div class="category"
+       onclick="openTshirt()">
+
+    <div
+      class="category-img"
+      style="
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:42px;">
+      🎨
     </div>
-    <div class="cat-name">Printing</div>
+
+    <div class="category-name">
+      Customize
+    </div>
+
   </div>
 
 </div>
 
 
-<!-- HERO -->
-<div class="hero">
+<!-- BANNER -->
 
-  <div class="hero-text">
+<section class="banner">
 
-    <div class="hero-small">🔥 SPECIAL OFFER</div>
+  <div class="banner-content">
 
-    <div class="hero-title">
-      CUSTOM<br>T-SHIRTS
+    <div class="banner-small">
+      🔥 SPECIAL OFFER
     </div>
 
-    <div class="hero-desc">
+    <h1>
+      CUSTOM<br>
+      T-SHIRTS
+    </h1>
+
+    <p>
       Apna design upload karo aur
-      apni T-Shirt customize karo.
-    </div>
+      apni shirt customize karo.
+    </p>
 
-    <button onclick="goCustomize()">
+    <button
+      class="banner-btn"
+      onclick="openTshirt()">
+
       Customize Now →
+      
     </button>
 
   </div>
 
-  <img src="tshirt.jpg.png" alt="Custom T-Shirt">
 
-</div>
-
-<div class="dots">
-  <div class="dot active"></div>
-  <div class="dot"></div>
-  <div class="dot"></div>
-  <div class="dot"></div>
-</div>
-
-
-<!-- IN DEMAND -->
-<section class="section">
-
-  <div class="section-head">
-    <div class="section-title">🔥 In Demand</div>
-    <div class="see">See All</div>
-  </div>
-
-  <div class="demand">
-
-    <div class="demand-grid">
-
-      <div class="demand-card product searchable"
-           data-name="tshirt custom t shirt">
-
-        <div class="demand-img">
-          <img src="tshirt.jpg.png" alt="Custom T-Shirt">
-        </div>
-
-        <div class="demand-name">Custom T-Shirt</div>
-        <div class="demand-price">₹299</div>
-
-      </div>
-
-
-      <div class="demand-card product searchable"
-           data-name="mug printed mug">
-
-        <div class="demand-img">
-          <img src="mug.jpg.jpg" alt="Printed Mug">
-        </div>
-
-        <div class="demand-name">Printed Mug</div>
-        <div class="demand-price">₹149</div>
-
-      </div>
-
-    </div>
-
-  </div>
+  <img
+    src="tshirt.jpg.png"
+    class="banner-image"
+    alt="Custom T-Shirt">
 
 </section>
 
 
-<!-- POPULAR PRODUCTS -->
-<section class="section">
+<!-- DOTS -->
 
-  <div class="section-head">
-    <div class="section-title">⭐ Popular Products</div>
-    <div class="see">Best Sellers</div>
+<div class="dots">
+
+  <div class="dot active"></div>
+  <div class="dot"></div>
+  <div class="dot"></div>
+  <div class="dot"></div>
+
+</div>
+
+
+<!-- IN DEMAND -->
+
+<div class="section-title">
+
+  <h2>
+    🔥 In Demand
+  </h2>
+
+  <div
+    class="see-all"
+    onclick="showAllProducts()">
+
+    See All
+
   </div>
 
-  <div class="products">
+</div>
 
-    <!-- TSHIRT -->
-    <div class="card searchable"
-         data-name="tshirt custom t shirt printing">
 
-      <div class="product-img">
-        <span class="tag">POPULAR</span>
-        <img src="tshirt.jpg.png" alt="Custom T-Shirt">
+<!-- PRODUCTS -->
+
+<div class="products-area">
+
+  <div class="products" id="products">
+
+
+    <!-- T SHIRT -->
+
+    <div
+      class="product"
+      data-name="tshirt custom t shirt">
+
+      <img
+        src="tshirt.jpg.png"
+        class="product-image"
+        alt="Custom T-Shirt">
+
+      <div class="product-name">
+        Custom T-Shirt
       </div>
 
-      <div class="product-name">Custom T-Shirt</div>
-
-      <div class="product-desc">
-        Upload your own design
+      <div class="product-price">
+        ₹299
       </div>
 
-      <div class="price">
-        ₹299 <span class="old">₹399</span>
-      </div>
+      <button
+        class="product-btn"
+        onclick="openTshirt()">
 
-      <button class="product-btn main"
-              onclick="goCustomize()">
         CUSTOMIZE
+
       </button>
 
     </div>
 
 
     <!-- MUG -->
-    <div class="card searchable"
-         data-name="mug printed coffee mug">
 
-      <div class="product-img">
-        <span class="tag">BEST SELLER</span>
-        <img src="mug.jpg.jpg" alt="Printed Mug">
+    <div
+      class="product"
+      data-name="mug coffee mug custom mug">
+
+      <img
+        src="mug.jpg.jpg"
+        class="product-image"
+        alt="Custom Mug">
+
+      <div class="product-name">
+        Custom Photo Mug
       </div>
 
-      <div class="product-name">Printed Mug</div>
-
-      <div class="product-desc">
-        Personalized photo mug
+      <div class="product-price">
+        ₹150
       </div>
 
-      <div class="price">
-        ₹149 <span class="old">₹199</span>
-      </div>
+      <button
+        class="product-btn"
+        onclick="openMug()">
 
-      <button class="product-btn"
-              onclick="comingSoon()">
         SHOP NOW
+
       </button>
 
     </div>
 
 
     <!-- GIFT -->
-    <div class="card searchable"
-         data-name="gift personalized gift">
 
-      <div class="product-img">
-        <img src="gift.jpg.jpg" alt="Personalized Gift">
+    <div
+      class="product"
+      data-name="gift gift box gifts">
+
+      <img
+        src="gift.jpg.jpg"
+        class="product-image"
+        alt="Gift">
+
+      <div class="product-name">
+        Gift Box
       </div>
 
-      <div class="product-name">Personalized Gift</div>
-
-      <div class="product-desc">
-        Special gifts for everyone
+      <div class="product-price">
+        ₹199
       </div>
 
-      <div class="price">
-        ₹299
-      </div>
+      <button
+        class="product-btn"
+        onclick="openGift()">
 
-      <button class="product-btn"
-        onclick="window.location.href='mug.html'">
-  SHOP NOW
-</button>
+        SHOP NOW
+
+      </button>
 
     </div>
 
 
     <!-- CAP -->
-    <div class="card searchable"
-         data-name="cap printed cap">
 
-      <div class="product-img">
-        <img src="cap.jpg.jpg" alt="Printed Cap">
+    <div
+      class="product"
+      data-name="cap custom cap">
+
+      <img
+        src="cap.jpg.jpg"
+        class="product-image"
+        alt="Custom Cap">
+
+      <div class="product-name">
+        Custom Cap
       </div>
 
-      <div class="product-name">Printed Cap</div>
-
-      <div class="product-desc">
-        Custom printed cap
-      </div>
-
-      <div class="price">
+      <div class="product-price">
         ₹199
       </div>
 
-      <button class="product-btn"
-        onclick="window.location.href='mug.html'">
-  SHOP NOW
+      <button
+        class="product-btn"
+        onclick="openCap()">
+
+        SHOP NOW
+
       </button>
+
     </div>
 
   </div>
 
-</section>
 
+  <div
+    id="noResult"
+    class="no-result">
 
-<!-- SEARCH EMPTY -->
-<div class="empty" id="empty">
+    😔 Product nahi mila.
 
-  <div>🔍</div>
+    <br><br>
 
-  <h3>Product nahi mila</h3>
+    Kuch aur search karo.
 
-  <p>Kuch aur search karke dekhein.</p>
-
-</div>
-
-
-<!-- INFO -->
-<div class="info">
-
-  <h3>🎨 Made Just For You</h3>
-
-  <p>
-    Apna favourite design upload karein aur
-    custom printed products order karein.
-    <br>
-    Quality Printing • Easy Ordering • WhatsApp Support
-  </p>
+  </div>
 
 </div>
 
 
 <!-- BOTTOM NAV -->
-<nav class="bottom">
 
-  <div class="nav active" onclick="goHome()">
-    <div class="nav-icon">⌂</div>
+<nav class="bottom-nav">
+
+
+  <div
+    class="nav-item active"
+    onclick="goHome()">
+
+    <span class="nav-icon">
+      🏠
+    </span>
+
     Home
+
   </div>
 
-  <div class="nav" onclick="scrollCategories()">
-    <div class="nav-icon">▦</div>
+
+  <div
+    class="nav-item"
+    onclick="showCategories()">
+
+    <span class="nav-icon">
+      ▦
+    </span>
+
     Categories
+
   </div>
 
-  <div class="nav" onclick="showOrders()">
-    <div class="nav-icon">📦</div>
+
+  <div
+    class="nav-item"
+    onclick="openOrders()">
+
+    <span class="nav-icon">
+      📦
+    </span>
+
     Orders
+
   </div>
 
-  <div class="nav" onclick="openCart()">
-    <div class="nav-icon">🛒</div>
+
+  <div
+    class="nav-item"
+    onclick="openCart()">
+
+    <span class="nav-icon">
+      🛒
+    </span>
+
     Cart
-    <span class="nav-badge" id="bottomBadge">0</span>
+
   </div>
+
 
 </nav>
 
 
 <script>
 
-/* CUSTOMIZE */
-function goCustomize(){
-  window.location.href="customize.html";
+/* =========================
+   PRODUCT NAVIGATION
+========================= */
+
+function openTshirt(){
+
+  window.location.href = "customize.html";
+
 }
 
 
-/* CART */
+function openMug(){
+
+  window.location.href = "mug.html";
+
+}
+
+
+function openGift(){
+
+  window.location.href = "gift.html";
+
+}
+
+
+function openCap(){
+
+  window.location.href = "cap.html";
+
+}
+
+
+/* =========================
+   CART
+========================= */
+
 function openCart(){
 
-  const cart=localStorage.getItem("cartItem");
+  const cart =
+    localStorage.getItem("cartItem");
 
   if(cart){
-    window.location.href="order.html";
+
+    window.location.href =
+      "order.html";
+
   }else{
-    alert("Your cart is empty 🛒");
+
+    alert(
+      "🛒 Cart abhi empty hai.\n\nPehle koi product select karo."
+    );
+
   }
 
 }
 
 
-/* ORDERS */
-function showOrders(){
-  alert("Order tracking feature coming soon 📦");
+/* =========================
+   ORDERS
+========================= */
+
+function openOrders(){
+
+  const cart =
+    localStorage.getItem("cartItem");
+
+  if(cart){
+
+    window.location.href =
+      "order.html";
+
+  }else{
+
+    alert(
+      "📦 Abhi koi order nahi hai."
+    );
+
+  }
+
 }
 
 
-/* ADDRESS */
-function addressAlert(){
-  alert("Delivery address order place karte waqt enter karein 📍");
+/* =========================
+   ADDRESS
+========================= */
+
+function addAddress(){
+
+  const address =
+    prompt(
+      "📍 Apna delivery address enter karo:"
+    );
+
+  if(address){
+
+    localStorage.setItem(
+      "customerAddress",
+      address
+    );
+
+    alert(
+      "✅ Address save ho gaya!"
+    );
+
+  }
+
 }
 
 
-/* COMING SOON */
-function comingSoon(){
-  alert("Ye product jaldi available hoga ❤️");
-}
-
-
-/* HOME */
-function goHome(){
-  window.scrollTo({
-    top:0,
-    behavior:"smooth"
-  });
-}
-
-
-/* CATEGORY SCROLL */
-function scrollCategories(){
-  window.scrollTo({
-    top:150,
-    behavior:"smooth"
-  });
-}
-
-
-/* SEARCH */
-const searchInput=
-document.getElementById("searchInput");
-
-const clearBtn=
-document.getElementById("clearBtn");
-
-const items=
-document.querySelectorAll(".searchable");
-
-const empty=
-document.getElementById("empty");
-
+/* =========================
+   SEARCH
+========================= */
 
 function searchProducts(){
 
-  const query=
-    searchInput.value
+  const search =
+    document
+    .getElementById("searchInput")
+    .value
     .toLowerCase()
     .trim();
 
-  let found=0;
+  const products =
+    document.querySelectorAll(
+      ".product"
+    );
 
-  if(query){
-    clearBtn.style.display="block";
-  }else{
-    clearBtn.style.display="none";
-  }
+  let found = 0;
 
-  items.forEach(function(item){
+  products.forEach(function(product){
 
-    const name=
-      item.dataset.name.toLowerCase();
+    const name =
+      product
+      .getAttribute("data-name")
+      .toLowerCase();
 
     if(
-      query==="" ||
-      name.includes(query)
+      name.includes(search)
     ){
-      item.style.display="";
+
+      product.style.display =
+        "block";
+
       found++;
+
     }else{
-      item.style.display="none";
+
+      product.style.display =
+        "none";
+
     }
 
   });
 
 
-  if(query && found===0){
-    empty.style.display="block";
+  const noResult =
+    document.getElementById(
+      "noResult"
+    );
+
+  if(found === 0){
+
+    noResult.style.display =
+      "block";
+
   }else{
-    empty.style.display="none";
+
+    noResult.style.display =
+      "none";
+
   }
 
 }
 
 
-searchInput.addEventListener(
-  "input",
-  searchProducts
-);
+/* =========================
+   SEE ALL
+========================= */
+
+function showAllProducts(){
+
+  const products =
+    document.querySelectorAll(
+      ".product"
+    );
+
+  products.forEach(function(product){
+
+    product.style.display =
+      "block";
+
+  });
+
+  document
+    .getElementById("searchInput")
+    .value = "";
+
+  document
+    .getElementById("noResult")
+    .style.display = "none";
+
+}
 
 
-clearBtn.addEventListener(
-  "click",
-  function(){
+/* =========================
+   CATEGORY
+========================= */
 
-    searchInput.value="";
-    searchProducts();
-    searchInput.focus();
+function showCategories(){
 
-  }
-);
+  document
+    .querySelector(".categories")
+    .scrollIntoView({
+      behavior:"smooth"
+    });
+
+}
 
 
-/* CATEGORY FILTER */
-function filterProducts(word){
+/* =========================
+   HOME
+========================= */
 
-  searchInput.value=word;
-  searchProducts();
+function goHome(){
 
   window.scrollTo({
-    top:document.body.scrollHeight/2,
+    top:0,
     behavior:"smooth"
   });
 
 }
 
 
-/* CART BADGE */
-function updateCart(){
+/* =========================
+   CART BADGE
+========================= */
 
-  const cart=
-    localStorage.getItem("cartItem");
+function updateCartBadge(){
 
-  const badge=
-    document.getElementById("cartBadge");
+  const cart =
+    localStorage.getItem(
+      "cartItem"
+    );
 
-  const bottom=
-    document.getElementById("bottomBadge");
+  const badge =
+    document.getElementById(
+      "cartBadge"
+    );
 
+  if(cart){
 
-  if(!cart){
+    try{
 
-    badge.style.display="none";
-    bottom.style.display="none";
-    return;
+      const item =
+        JSON.parse(cart);
 
-  }
+      badge.textContent =
+        item.quantity || "1";
 
+    }catch(e){
 
-  try{
+      badge.textContent =
+        "1";
 
-    const item=JSON.parse(cart);
+    }
 
-    const qty=
-      Number(item.quantity)||1;
+  }else{
 
-    badge.textContent=qty;
-    bottom.textContent=qty;
-
-    badge.style.display="flex";
-    bottom.style.display="flex";
-
-  }catch(error){
-
-    badge.style.display="none";
-    bottom.style.display="none";
+    badge.textContent =
+      "0";
 
   }
 
 }
 
 
-/* START */
-updateCart();
+/* RUN */
+
+updateCartBadge();
 
 </script>
 
