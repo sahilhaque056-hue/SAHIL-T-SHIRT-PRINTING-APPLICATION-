@@ -1,1 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <title>Customize T-Shirt - SAHIL T SHIRT PRINTING</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #f5f5f5;
+      color: #222;
+    }
+
+    header {
+      background: #111;
+      color: white;
+      padding: 18px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 20px;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: auto;
+      padding: 18px;
+    }
+
+    .card {
+      background: white;
+      padding: 18px;
+      border-radius: 14px;
+      margin-bottom: 18px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+
+    .preview {
+      height: 300px;
+      background: #eee;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 100px;
+      margin-bottom: 15px;
+    }
+
+    label {
+      display: block;
+      font-weight: bold;
+      margin: 15px 0 8px;
+    }
+
+    select,
+    input[type="number"],
+    input[type="file"] {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 15px;
+    }
+
+    .colors {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .color-btn {
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      border: 3px solid white;
+      box-shadow: 0 0 0 1px #ccc;
+      cursor: pointer;
+    }
+
+    .black { background: black; }
+    .white { background: white; }
+    .red { background: red; }
+    .blue { background: blue; }
+    .green { background: green; }
+
+    .selected {
+      box-shadow: 0 0 0 3px #111;
+    }
+
+    .btn {
+      width: 100%;
+      padding: 14px;
+      background: #111;
+      color: white;
+      border: none;
+      border-radius: 9px;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 18px;
+    }
+
+    .back {
+      display: block;
+      text-align: center;
+      margin-top: 15px;
+      text-decoration: none;
+      color: #111;
+    }
+
+    #uploadedImage {
+      max-width: 150px;
+      max-height: 150px;
+      margin-top: 15px;
+      border-radius: 8px;
+      display: none;
+    }
+
+    .price {
+      font-size: 22px;
+      font-weight: bold;
+      margin-top: 15px;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>SAHIL T SHIRT PRINTING</h1>
+</header>
+
+<div class="container">
+
+  <div class="card">
+
+    <h2>👕 Customize Your T-Shirt</h2>
+
+    <div class="preview" id="shirtPreview">
+      👕
+    </div>
+
+    <p>
+      Create your own custom T-shirt with your design.
+    </p>
+
+  </div>
+
+
+  <div class="card">
+
+    <h3>1️⃣ Choose Colour</h3>
+
+    <div class="colors">
+
+      <button class="color-btn black"
+        onclick="changeColor('black', this)">
+      </button>
+
+      <button class="color-btn white"
+        onclick="changeColor('white', this)">
+      </button>
+
+      <button class="color-btn red"
+        onclick="changeColor('red', this)">
+      </button>
+
+      <button class="color-btn blue"
+        onclick="changeColor('blue', this)">
+      </button>
+
+      <button class="color-btn green"
+        onclick="changeColor('green', this)">
+      </button>
+
+    </div>
+
+
+    <label for="size">2️⃣ Select Size</label>
+
+    <select id="size">
+      <option value="S">Small (S)</option>
+      <option value="M">Medium (M)</option>
+      <option value="L">Large (L)</option>
+      <option value="XL">Extra Large (XL)</option>
+      <option value="XXL">XXL</option>
+    </select>
+
+
+    <label for="quantity">3️⃣ Quantity</label>
+
+    <input
+      type="number"
+      id="quantity"
+      value="1"
+      min="1"
+      onchange="calculatePrice()"
+    >
+
+
+    <label for="design">4️⃣ Upload Your Design</label>
+
+    <input
+      type="file"
+      id="design"
+      accept="image/*"
+      onchange="showImage(event)"
+    >
+
+    <img id="uploadedImage">
+
+
+    <div class="price">
+      Price: ₹<span id="price">299</span>
+    </div>
+
+
+    <button class="btn" onclick="addToCart()">
+      🛒 Add to Cart
+    </button>
+
+  </div>
+
+
+  <a class="back" href="index.html">
+    ← Back to Home
+  </a>
+
+</div>
+
+
+<script>
+
+  let selectedColor = "black";
+
+  function changeColor(color, button) {
+
+    selectedColor = color;
+
+    document
+      .querySelectorAll(".color-btn")
+      .forEach(btn => btn.classList.remove("selected"));
+
+    button.classList.add("selected");
+
+  }
+
+
+  function calculatePrice() {
+
+    const quantity =
+      Number(document.getElementById("quantity").value);
+
+    const price = 299 * quantity;
+
+    document.getElementById("price").innerText = price;
+
+  }
+
+
+  function showImage(event) {
+
+    const file = event.target.files[0];
+
+    if (!file) return;
+
+    const image =
+      document.getElementById("uploadedImage");
+
+    image.src =
+      URL.createObjectURL(file);
+
+    image.style.display = "block";
+
+  }
+
+
+  function addToCart() {
+
+    const size =
+      document.getElementById("size").value;
+
+    const quantity =
+      document.getElementById("quantity").value;
+
+    alert(
+      "Added to cart! 👕\n\n" +
+      "Colour: " + selectedColor +
+      "\nSize: " + size +
+      "\nQuantity: " + quantity
+    );
+
+  }
+
+</script>
+
+</body>
+</html>
