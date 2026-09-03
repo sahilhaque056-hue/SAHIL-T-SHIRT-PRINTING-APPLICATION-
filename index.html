@@ -14,161 +14,244 @@
   font-family:Arial,Helvetica,sans-serif;
 }
 
+html{
+  scroll-behavior:smooth;
+}
+
 body{
-  background:#f7f7fb;
-  color:#202020;
-  padding-bottom:75px;
+  background:#f7f5ff;
+  color:#222;
+  padding-bottom:85px;
 }
 
 /* HEADER */
+
 .header{
-  background:#ffffff;
+  background:linear-gradient(135deg,#4c1d95,#7c3aed);
+  color:white;
   padding:16px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  box-shadow:0 2px 12px rgba(0,0,0,.08);
   position:sticky;
   top:0;
   z-index:100;
+  box-shadow:0 4px 18px rgba(0,0,0,.18);
 }
 
-.logo{
+.header-top{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+}
+
+.brand{
   display:flex;
   align-items:center;
   gap:10px;
 }
 
-.logoIcon{
+.brand-logo{
   width:45px;
   height:45px;
   border-radius:14px;
-  background:linear-gradient(135deg,#6c2bd9,#9b51e0);
-  color:#ffd928;
+  background:#facc15;
   display:flex;
   align-items:center;
   justify-content:center;
   font-size:25px;
-  font-weight:bold;
+  box-shadow:0 4px 10px rgba(0,0,0,.15);
 }
 
-.logoText h1{
+.brand h1{
   font-size:17px;
-  color:#4c1d95;
+  font-weight:900;
+  line-height:1.15;
 }
 
-.logoText p{
-  font-size:11px;
-  color:#777;
+.brand p{
+  font-size:10px;
+  opacity:.85;
   margin-top:3px;
 }
 
-.cartBtn{
-  border:0;
-  background:#ffd928;
-  color:#35126b;
-  width:44px;
-  height:44px;
-  border-radius:14px;
-  font-size:21px;
-  cursor:pointer;
-}
-
-/* SEARCH */
-.searchBox{
-  margin:15px;
-  background:white;
-  border:2px solid #6c2bd9;
-  border-radius:15px;
-  padding:12px 15px;
+.header-actions{
   display:flex;
-  align-items:center;
-  gap:10px;
+  gap:7px;
 }
 
-.searchBox input{
-  border:0;
-  outline:0;
-  width:100%;
-  font-size:15px;
+.header-btn{
+  width:40px;
+  height:40px;
+  border:none;
+  border-radius:12px;
+  background:rgba(255,255,255,.16);
+  color:white;
+  font-size:19px;
+  cursor:pointer;
+  position:relative;
+}
+
+.cart-dot{
+  position:absolute;
+  top:-3px;
+  right:-3px;
+  min-width:17px;
+  height:17px;
+  border-radius:50%;
+  background:#facc15;
+  color:#351000;
+  font-size:9px;
+  font-weight:900;
+  display:none;
+  align-items:center;
+  justify-content:center;
+}
+
+/* MAIN */
+
+.container{
+  max-width:700px;
+  margin:auto;
+  padding:15px;
 }
 
 /* HERO */
+
 .hero{
-  margin:15px;
-  border-radius:22px;
-  overflow:hidden;
-  position:relative;
-  min-height:230px;
-  background:#35126b;
-}
-
-.hero img{
-  width:100%;
-  height:230px;
-  object-fit:cover;
-  display:block;
-  opacity:.72;
-}
-
-.heroContent{
-  position:absolute;
-  inset:0;
-  padding:25px;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
+  margin-top:5px;
+  background:linear-gradient(135deg,#5b21b6,#7c3aed);
+  border-radius:25px;
+  padding:25px 20px;
   color:white;
+  position:relative;
+  overflow:hidden;
+  box-shadow:0 8px 25px rgba(91,33,182,.25);
 }
 
-.heroContent h2{
+.hero:before{
+  content:"";
+  position:absolute;
+  width:170px;
+  height:170px;
+  border-radius:50%;
+  background:rgba(255,255,255,.08);
+  right:-60px;
+  top:-60px;
+}
+
+.hero:after{
+  content:"";
+  position:absolute;
+  width:110px;
+  height:110px;
+  border-radius:50%;
+  background:rgba(250,204,21,.13);
+  left:-45px;
+  bottom:-45px;
+}
+
+.hero-content{
+  position:relative;
+  z-index:2;
+}
+
+.hero-badge{
+  display:inline-block;
+  background:#facc15;
+  color:#351000;
+  padding:7px 11px;
+  border-radius:20px;
+  font-size:11px;
+  font-weight:900;
+  margin-bottom:12px;
+}
+
+.hero h2{
   font-size:29px;
-  max-width:270px;
-  line-height:1.1;
+  line-height:1.12;
+  margin-bottom:10px;
 }
 
-.heroContent p{
-  margin-top:10px;
+.hero p{
   font-size:14px;
+  line-height:1.6;
+  opacity:.9;
+  max-width:470px;
 }
 
-.heroBtn{
-  margin-top:17px;
-  width:max-content;
-  border:0;
-  background:#ffd928;
-  color:#35126b;
-  padding:12px 19px;
-  border-radius:12px;
-  font-weight:bold;
+.hero-buttons{
+  display:flex;
+  gap:9px;
+  margin-top:18px;
+}
+
+.hero-btn{
+  border:none;
+  padding:12px 16px;
+  border-radius:13px;
+  font-weight:900;
+  font-size:13px;
   cursor:pointer;
 }
 
-/* SECTION */
-.section{
-  padding:5px 15px 20px;
+.hero-btn.primary{
+  background:#facc15;
+  color:#351000;
 }
 
-.sectionTitle{
+.hero-btn.secondary{
+  background:rgba(255,255,255,.16);
+  color:white;
+  border:1px solid rgba(255,255,255,.25);
+}
+
+/* SEARCH */
+
+.search-box{
+  margin:16px 0;
+  background:white;
+  border-radius:17px;
+  padding:5px;
+  display:flex;
+  align-items:center;
+  box-shadow:0 4px 18px rgba(76,29,149,.09);
+}
+
+.search-icon{
+  width:42px;
+  text-align:center;
+  font-size:19px;
+}
+
+.search-box input{
+  flex:1;
+  border:none;
+  outline:none;
+  background:transparent;
+  padding:12px 5px;
+  font-size:14px;
+}
+
+/* SECTION */
+
+.section-head{
   display:flex;
   justify-content:space-between;
   align-items:center;
-  margin-bottom:13px;
+  margin:20px 2px 12px;
 }
 
-.sectionTitle h2{
+.section-head h2{
+  color:#3b176d;
   font-size:20px;
-  color:#35126b;
 }
 
-.sectionTitle button{
-  border:0;
-  background:transparent;
-  color:#6c2bd9;
-  font-weight:bold;
+.section-head span{
+  font-size:12px;
+  color:#777;
 }
 
-/* CATEGORY */
+/* CATEGORIES */
+
 .categories{
   display:grid;
   grid-template-columns:repeat(4,1fr);
@@ -178,162 +261,352 @@ body{
 .category{
   background:white;
   border-radius:17px;
-  padding:9px 5px;
+  padding:14px 7px;
   text-align:center;
-  box-shadow:0 4px 14px rgba(0,0,0,.07);
+  border:2px solid transparent;
+  box-shadow:0 4px 15px rgba(76,29,149,.07);
   cursor:pointer;
   transition:.2s;
 }
 
 .category:active{
   transform:scale(.96);
+  border-color:#7c3aed;
 }
 
-.category img{
-  width:58px;
-  height:58px;
-  border-radius:14px;
-  object-fit:cover;
+.category-icon{
+  font-size:27px;
+  margin-bottom:6px;
 }
 
-.category p{
-  font-size:12px;
-  font-weight:bold;
-  margin-top:7px;
-  color:#35126b;
+.category-name{
+  font-size:11px;
+  font-weight:800;
+  color:#4c1d95;
 }
 
 /* PRODUCTS */
+
 .products{
   display:grid;
   grid-template-columns:repeat(2,1fr);
-  gap:13px;
+  gap:12px;
 }
 
 .product{
   background:white;
-  border-radius:19px;
+  border-radius:20px;
   overflow:hidden;
-  box-shadow:0 5px 18px rgba(0,0,0,.08);
+  box-shadow:0 5px 20px rgba(76,29,149,.09);
+  cursor:pointer;
+  transition:.2s;
+}
+
+.product:active{
+  transform:scale(.98);
+}
+
+.product-image-wrap{
+  position:relative;
+  background:#f1eff8;
 }
 
 .product img{
   width:100%;
-  height:170px;
-  object-fit:cover;
+  height:175px;
   display:block;
+  object-fit:cover;
 }
 
-.productInfo{
+.product-tag{
+  position:absolute;
+  left:9px;
+  top:9px;
+  background:#facc15;
+  color:#351000;
+  border-radius:9px;
+  padding:5px 8px;
+  font-size:9px;
+  font-weight:900;
+}
+
+.product-body{
   padding:12px;
 }
 
-.productInfo h3{
-  font-size:16px;
-  color:#292929;
+.product-name{
+  font-size:15px;
+  font-weight:900;
+  color:#3b176d;
+  line-height:1.25;
 }
 
-.productInfo p{
-  font-size:12px;
+.product-desc{
+  font-size:11px;
   color:#777;
-  margin-top:5px;
+  margin-top:4px;
+  min-height:27px;
 }
 
-.price{
-  margin-top:9px;
-  font-size:18px;
-  font-weight:bold;
-  color:#6c2bd9;
-}
-
-.shopBtn{
-  width:100%;
-  border:0;
-  background:#6c2bd9;
-  color:white;
-  padding:11px;
-  border-radius:11px;
+.product-bottom{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
   margin-top:10px;
-  font-weight:bold;
+}
+
+.product-price{
+  color:#6d28d9;
+  font-size:19px;
+  font-weight:900;
+}
+
+.customize{
+  background:#eee8ff;
+  color:#5b21b6;
+  border:none;
+  border-radius:9px;
+  padding:8px 9px;
+  font-size:10px;
+  font-weight:900;
   cursor:pointer;
 }
 
-/* INFO */
-.info{
-  margin:0 15px 20px;
-  background:linear-gradient(135deg,#35126b,#6c2bd9);
-  color:white;
-  border-radius:20px;
-  padding:20px;
+/* WHY US */
+
+.why-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:10px;
 }
 
-.info h2{
-  color:#ffd928;
+.why-card{
+  background:white;
+  border-radius:17px;
+  padding:16px;
+  box-shadow:0 4px 15px rgba(76,29,149,.07);
+}
+
+.why-icon{
+  font-size:25px;
   margin-bottom:8px;
+}
+
+.why-card h3{
+  color:#4c1d95;
+  font-size:14px;
+  margin-bottom:4px;
+}
+
+.why-card p{
+  color:#777;
+  font-size:11px;
+  line-height:1.5;
+}
+
+/* CTA */
+
+.cta{
+  margin-top:20px;
+  background:linear-gradient(135deg,#fff7cc,#fff1a8);
+  border:2px solid #facc15;
+  border-radius:22px;
+  padding:20px;
+  text-align:center;
+}
+
+.cta h2{
+  color:#4c1d95;
   font-size:20px;
 }
 
-.info p{
-  font-size:13px;
-  line-height:1.6;
+.cta p{
+  color:#666;
+  font-size:12px;
+  margin:7px 0 14px;
 }
 
-/* WHATSAPP */
-.whatsapp{
-  margin:0 15px 20px;
+.whatsapp-main{
+  border:none;
   background:#25D366;
   color:white;
-  border:0;
-  width:calc(100% - 30px);
-  padding:14px;
-  border-radius:14px;
-  font-size:15px;
-  font-weight:bold;
+  padding:13px 20px;
+  border-radius:13px;
+  font-size:14px;
+  font-weight:900;
   cursor:pointer;
 }
 
+/* FOOTER */
+
+.footer{
+  margin-top:25px;
+  padding:25px 10px 10px;
+  text-align:center;
+}
+
+.footer-logo{
+  font-size:28px;
+}
+
+.footer h3{
+  color:#4c1d95;
+  font-size:16px;
+  margin-top:6px;
+}
+
+.footer p{
+  color:#777;
+  font-size:11px;
+  line-height:1.6;
+  margin-top:5px;
+}
+
+.footer-line{
+  height:1px;
+  background:#ddd;
+  margin:18px 0 12px;
+}
+
+.footer-copy{
+  color:#999;
+  font-size:10px;
+}
+
+/* FLOATING WHATSAPP */
+
+.whatsapp-float{
+  position:fixed;
+  right:17px;
+  bottom:78px;
+  width:53px;
+  height:53px;
+  border-radius:50%;
+  background:#25D366;
+  color:white;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:27px;
+  box-shadow:0 6px 20px rgba(0,0,0,.2);
+  z-index:90;
+  cursor:pointer;
+  border:none;
+}
+
 /* BOTTOM NAV */
-.bottomNav{
+
+.bottom-nav{
   position:fixed;
   bottom:0;
   left:0;
   right:0;
   height:68px;
   background:white;
-  box-shadow:0 -3px 15px rgba(0,0,0,.12);
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  z-index:200;
+  border-top:1px solid #e8e3f2;
+  display:flex;
+  justify-content:space-around;
+  align-items:center;
+  z-index:80;
+  box-shadow:0 -4px 18px rgba(0,0,0,.08);
 }
 
-.navItem{
-  border:0;
-  background:white;
-  font-size:12px;
+.nav-item{
+  border:none;
+  background:transparent;
   color:#777;
+  font-size:10px;
+  font-weight:700;
   cursor:pointer;
+  text-align:center;
+  min-width:55px;
 }
 
-.navItem span{
+.nav-icon{
   display:block;
-  font-size:22px;
+  font-size:21px;
   margin-bottom:3px;
 }
 
-.navItem.active{
-  color:#6c2bd9;
-  font-weight:bold;
+.nav-item.active{
+  color:#6d28d9;
 }
 
-/* MOBILE */
+.nav-cart{
+  position:relative;
+}
+
+.nav-count{
+  position:absolute;
+  top:-4px;
+  right:5px;
+  min-width:17px;
+  height:17px;
+  border-radius:50%;
+  background:#facc15;
+  color:#351000;
+  font-size:9px;
+  font-weight:900;
+  display:none;
+  align-items:center;
+  justify-content:center;
+}
+
+/* SEARCH RESULT */
+
+.no-result{
+  display:none;
+  background:white;
+  border-radius:18px;
+  padding:25px;
+  text-align:center;
+  color:#777;
+  font-size:13px;
+  grid-column:1/-1;
+}
+
+/* RESPONSIVE */
+
 @media(max-width:380px){
-  .categories{
-    grid-template-columns:repeat(2,1fr);
+
+  .brand h1{
+    font-size:15px;
   }
 
-  .heroContent h2{
+  .brand-logo{
+    width:40px;
+    height:40px;
+  }
+
+  .header-btn{
+    width:37px;
+    height:37px;
+  }
+
+  .hero h2{
     font-size:25px;
   }
+
+  .product img{
+    height:150px;
+  }
+
+}
+
+@media(min-width:600px){
+
+  .products{
+    grid-template-columns:repeat(4,1fr);
+  }
+
+  .categories{
+    max-width:600px;
+  }
+
+  .product img{
+    height:190px;
+  }
+
 }
 </style>
 </head>
@@ -341,213 +614,664 @@ body{
 <body>
 
 <!-- HEADER -->
+
 <header class="header">
 
-  <div class="logo">
-    <div class="logoIcon">S</div>
+  <div class="header-top">
 
-    <div class="logoText">
-      <h1>SAHIL T SHIRT PRINTING</h1>
-      <p>Custom Printing • Premium Quality</p>
+    <div class="brand">
+
+      <div class="brand-logo">
+        👕
+      </div>
+
+      <div>
+        <h1>SAHIL T SHIRT<br>PRINTING</h1>
+        <p>Custom Printing • Personalized Gifts</p>
+      </div>
+
     </div>
-  </div>
 
-  <button class="cartBtn" onclick="openCart()">🛒</button>
+
+    <div class="header-actions">
+
+      <button
+        class="header-btn"
+        onclick="openOrders()"
+        title="Orders"
+      >
+        📦
+      </button>
+
+      <button
+        class="header-btn"
+        onclick="openCart()"
+        title="Cart"
+      >
+        🛒
+
+        <span
+          class="cart-dot"
+          id="headerCartCount"
+        >
+          1
+        </span>
+
+      </button>
+
+    </div>
+
+  </div>
 
 </header>
 
 
-<!-- SEARCH -->
-<div class="searchBox">
-  🔍
-  <input
-    type="text"
-    id="searchInput"
-    placeholder="Search T-shirt, Mug, Gift, Cap..."
-    oninput="searchProducts()"
-  >
-</div>
+<main class="container">
+
+  <!-- HERO -->
+
+  <section class="hero">
+
+    <div class="hero-content">
+
+      <div class="hero-badge">
+        🔥 CUSTOM PRINTING AVAILABLE
+      </div>
+
+      <h2>
+        Apni Style,<br>
+        Apna Design! 💜
+      </h2>
+
+      <p>
+        T-Shirt, Mug, Gift aur Cap par
+        apna favourite photo, logo ya text
+        print karwayein.
+      </p>
+
+      <div class="hero-buttons">
+
+        <button
+          class="hero-btn primary"
+          onclick="scrollToProducts()"
+        >
+          🛍️ Shop Now
+        </button>
+
+        <button
+          class="hero-btn secondary"
+          onclick="openWhatsApp()"
+        >
+          💬 WhatsApp
+        </button>
+
+      </div>
+
+    </div>
+
+  </section>
 
 
-<!-- HERO -->
-<section class="hero">
+  <!-- SEARCH -->
 
-  <img src="tshirt.jpg.png" alt="Custom T Shirt">
+  <div class="search-box">
 
-  <div class="heroContent">
-    <h2>Apna Design,<br>Apni Style 🔥</h2>
+    <div class="search-icon">
+      🔍
+    </div>
 
-    <p>Custom printed products ghar baithe order karein.</p>
+    <input
+      type="text"
+      id="search"
+      placeholder="Search T-shirt, Mug, Gift, Cap..."
+      oninput="searchProducts()"
+    >
 
-    <button class="heroBtn" onclick="openTshirt()">
-      👕 Customize T-Shirt
-    </button>
   </div>
 
-</section>
 
+  <!-- CATEGORIES -->
 
-<!-- CATEGORIES -->
-<section class="section">
+  <div class="section-head">
 
-  <div class="sectionTitle">
-    <h2>Shop By Category</h2>
+    <h2>Categories</h2>
+
+    <span>
+      4 Products
+    </span>
+
   </div>
+
 
   <div class="categories">
 
-    <div class="category" onclick="openTshirt()">
-      <img src="tshirt.jpg.png" alt="T Shirt">
-      <p>👕 T-Shirt</p>
+    <div
+      class="category"
+      onclick="openTshirt()"
+    >
+
+      <div class="category-icon">
+        👕
+      </div>
+
+      <div class="category-name">
+        T-Shirt
+      </div>
+
     </div>
 
-    <div class="category" onclick="openMug()">
-      <img src="mug.jpg.jpg" alt="Mug">
-      <p>☕ Mug</p>
+
+    <div
+      class="category"
+      onclick="openMug()"
+    >
+
+      <div class="category-icon">
+        ☕
+      </div>
+
+      <div class="category-name">
+        Mug
+      </div>
+
     </div>
 
-    <div class="category" onclick="openGift()">
-      <img src="gift.jpg.jpg" alt="Gift">
-      <p>🎁 Gift</p>
+
+    <div
+      class="category"
+      onclick="openGift()"
+    >
+
+      <div class="category-icon">
+        🎁
+      </div>
+
+      <div class="category-name">
+        Gift
+      </div>
+
     </div>
 
-    <div class="category" onclick="openCap()">
-      <img src="cap.jpg.jpg" alt="Cap">
-      <p>🧢 Cap</p>
+
+    <div
+      class="category"
+      onclick="openCap()"
+    >
+
+      <div class="category-icon">
+        🧢
+      </div>
+
+      <div class="category-name">
+        Cap
+      </div>
+
     </div>
 
   </div>
 
-</section>
 
+  <!-- PRODUCTS -->
 
-<!-- PRODUCTS -->
-<section class="section">
+  <div
+    class="section-head"
+    id="productsSection"
+  >
 
-  <div class="sectionTitle">
-    <h2>🔥 Popular Products</h2>
+    <h2>Popular Products</h2>
+
+    <span>
+      Customize Now
+    </span>
+
   </div>
 
-  <div class="products" id="productList">
 
-    <!-- T SHIRT -->
-    <div class="product" data-name="tshirt t shirt custom printed">
+  <div
+    class="products"
+    id="products"
+  >
 
-      <img src="tshirt.jpg.png" alt="Custom T Shirt">
+    <!-- TSHIRT -->
 
-      <div class="productInfo">
-        <h3>Custom T-Shirt</h3>
-        <p>Apna photo / design print karaye</p>
+    <div
+      class="product"
+      data-name="t shirt tshirt custom printed"
+      onclick="openTshirt()"
+    >
 
-        <div class="price">₹299</div>
+      <div class="product-image-wrap">
 
-        <button class="shopBtn" onclick="openTshirt()">
-          Customize Now
-        </button>
+        <img
+          src="tshirt.jpg.png"
+          alt="Custom Printed T-Shirt"
+        >
+
+        <div class="product-tag">
+          POPULAR
+        </div>
+
+      </div>
+
+      <div class="product-body">
+
+        <div class="product-name">
+          Custom T-Shirt
+        </div>
+
+        <div class="product-desc">
+          Photo, logo ya text print
+        </div>
+
+        <div class="product-bottom">
+
+          <div class="product-price">
+            ₹299
+          </div>
+
+          <button
+            class="customize"
+            onclick="event.stopPropagation();openTshirt()"
+          >
+            Customize
+          </button>
+
+        </div>
+
       </div>
 
     </div>
 
 
     <!-- MUG -->
-    <div class="product" data-name="mug custom printed mug">
 
-      <img src="mug.jpg.jpg" alt="Custom Mug">
+    <div
+      class="product"
+      data-name="mug custom printed coffee cup"
+      onclick="openMug()"
+    >
 
-      <div class="productInfo">
-        <h3>Custom Mug</h3>
-        <p>Personalized photo mug</p>
+      <div class="product-image-wrap">
 
-        <div class="price">₹149</div>
+        <img
+          src="mug.jpg.jpg"
+          alt="Custom Printed Mug"
+        >
 
-        <button class="shopBtn" onclick="openMug()">
-          Customize Now
-        </button>
+        <div class="product-tag">
+          BEST SELLER
+        </div>
+
+      </div>
+
+      <div class="product-body">
+
+        <div class="product-name">
+          Custom Mug
+        </div>
+
+        <div class="product-desc">
+          Photo ya name printing
+        </div>
+
+        <div class="product-bottom">
+
+          <div class="product-price">
+            ₹149
+          </div>
+
+          <button
+            class="customize"
+            onclick="event.stopPropagation();openMug()"
+          >
+            Customize
+          </button>
+
+        </div>
+
       </div>
 
     </div>
 
 
     <!-- GIFT -->
-    <div class="product" data-name="gift personalized gift">
 
-      <img src="gift.jpg.jpg" alt="Custom Gift">
+    <div
+      class="product"
+      data-name="gift personalized birthday couple special gift"
+      onclick="openGift()"
+    >
 
-      <div class="productInfo">
-        <h3>Personalized Gift</h3>
-        <p>Special moments ke liye</p>
+      <div class="product-image-wrap">
 
-        <div class="price">₹199</div>
+        <img
+          src="gift.jpg.jpg"
+          alt="Personalized Gift"
+        >
 
-        <button class="shopBtn" onclick="openGift()">
-          Customize Now
-        </button>
+        <div class="product-tag">
+          SPECIAL
+        </div>
+
+      </div>
+
+      <div class="product-body">
+
+        <div class="product-name">
+          Personalized Gift
+        </div>
+
+        <div class="product-desc">
+          Birthday, Couple & Special
+        </div>
+
+        <div class="product-bottom">
+
+          <div class="product-price">
+            ₹199
+          </div>
+
+          <button
+            class="customize"
+            onclick="event.stopPropagation();openGift()"
+          >
+            Customize
+          </button>
+
+        </div>
+
       </div>
 
     </div>
 
 
     <!-- CAP -->
-    <div class="product" data-name="cap custom printed cap">
 
-      <img src="cap.jpg.jpg" alt="Custom Cap">
+    <div
+      class="product"
+      data-name="cap custom printed hat"
+      onclick="openCap()"
+    >
 
-      <div class="productInfo">
-        <h3>Custom Cap</h3>
-        <p>Apne style ka custom cap</p>
+      <div class="product-image-wrap">
 
-        <div class="price">₹199</div>
+        <img
+          src="cap.jpg.jpg"
+          alt="Custom Printed Cap"
+        >
 
-        <button class="shopBtn" onclick="openCap()">
-          Customize Now
-        </button>
+        <div class="product-tag">
+          TRENDING
+        </div>
+
       </div>
+
+      <div class="product-body">
+
+        <div class="product-name">
+          Custom Cap
+        </div>
+
+        <div class="product-desc">
+          Logo, photo ya text print
+        </div>
+
+        <div class="product-bottom">
+
+          <div class="product-price">
+            ₹199
+          </div>
+
+          <button
+            class="customize"
+            onclick="event.stopPropagation();openCap()"
+          >
+            Customize
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <div
+      class="no-result"
+      id="noResult"
+    >
+      😕 Product nahi mila.<br>
+      Dusra naam search karein.
+    </div>
+
+  </div>
+
+
+  <!-- WHY US -->
+
+  <div class="section-head">
+
+    <h2>Why Choose Us?</h2>
+
+  </div>
+
+
+  <div class="why-grid">
+
+    <div class="why-card">
+
+      <div class="why-icon">
+        🎨
+      </div>
+
+      <h3>
+        Full Customization
+      </h3>
+
+      <p>
+        Apna photo, logo aur text
+        easily customize karein.
+      </p>
+
+    </div>
+
+
+    <div class="why-card">
+
+      <div class="why-icon">
+        ⚡
+      </div>
+
+      <h3>
+        Easy Ordering
+      </h3>
+
+      <p>
+        Mobile se kuch simple steps mein
+        order place karein.
+      </p>
+
+    </div>
+
+
+    <div class="why-card">
+
+      <div class="why-icon">
+        💜
+      </div>
+
+      <h3>
+        Personal Touch
+      </h3>
+
+      <p>
+        Har customized product ko
+        aapki choice ke according banayein.
+      </p>
+
+    </div>
+
+
+    <div class="why-card">
+
+      <div class="why-icon">
+        📱
+      </div>
+
+      <h3>
+        WhatsApp Order
+      </h3>
+
+      <p>
+        Order details directly
+        WhatsApp par bhejein.
+      </p>
 
     </div>
 
   </div>
 
-</section>
+
+  <!-- CTA -->
+
+  <section class="cta">
+
+    <h2>
+      💜 Apna Custom Product Banayein
+    </h2>
+
+    <p>
+      Design ready hai? Abhi WhatsApp par baat karein.
+    </p>
+
+    <button
+      class="whatsapp-main"
+      onclick="openWhatsApp()"
+    >
+      🟢 Chat on WhatsApp
+    </button>
+
+  </section>
 
 
-<!-- INFO -->
-<div class="info">
+  <!-- FOOTER -->
 
-  <h2>✨ Why Choose Us?</h2>
+  <footer class="footer">
 
-  <p>
-    ✔ Premium printing quality<br>
-    ✔ Custom photo & design printing<br>
-    ✔ Affordable prices<br>
-    ✔ WhatsApp order support<br>
-    ✔ Made specially for you ❤️
-  </p>
+    <div class="footer-logo">
+      👕
+    </div>
 
-</div>
+    <h3>
+      SAHIL T SHIRT PRINTING
+    </h3>
+
+    <p>
+      Custom T-Shirt • Mug • Gift • Cap
+    </p>
+
+    <div class="footer-line"></div>
+
+    <div class="footer-copy">
+      © 2026 SAHIL T SHIRT PRINTING
+      <br>
+      Made with 💜
+    </div>
+
+  </footer>
+
+</main>
 
 
-<!-- WHATSAPP -->
-<button class="whatsapp" onclick="openWhatsApp()">
-  💬 WhatsApp par Order / Enquiry
+<!-- FLOATING WHATSAPP -->
+
+<button
+  class="whatsapp-float"
+  onclick="openWhatsApp()"
+  title="WhatsApp"
+>
+  💬
 </button>
 
 
 <!-- BOTTOM NAV -->
-<nav class="bottomNav">
 
-  <button class="navItem active" onclick="goHome()">
-    <span>🏠</span>
+<nav class="bottom-nav">
+
+  <button
+    class="nav-item active"
+    onclick="goHome()"
+  >
+
+    <span class="nav-icon">
+      🏠
+    </span>
+
     Home
+
   </button>
 
-  <button class="navItem" onclick="openCart()">
-    <span>🛒</span>
+
+  <button
+    class="nav-item"
+    onclick="scrollToProducts()"
+  >
+
+    <span class="nav-icon">
+      🛍️
+    </span>
+
+    Shop
+
+  </button>
+
+
+  <button
+    class="nav-item nav-cart"
+    onclick="openCart()"
+  >
+
+    <span class="nav-icon">
+      🛒
+    </span>
+
+    <span
+      class="nav-count"
+      id="navCartCount"
+    >
+      1
+    </span>
+
     Cart
+
   </button>
 
-  <button class="navItem" onclick="openOrders()">
-    <span>📦</span>
+
+  <button
+    class="nav-item"
+    onclick="openOrders()"
+  >
+
+    <span class="nav-icon">
+      📦
+    </span>
+
     Orders
+
+  </button>
+
+
+  <button
+    class="nav-item"
+    onclick="openWhatsApp()"
+  >
+
+    <span class="nav-icon">
+      💬
+    </span>
+
+    Chat
+
   </button>
 
 </nav>
@@ -555,82 +1279,136 @@ body{
 
 <script>
 
-/* WHATSAPP NUMBER */
-const whatsappNumber = "918250366736";
+/* WHATSAPP */
+
+const whatsappNumber =
+  "918250366736";
 
 
-/* PRODUCT PAGES */
-function openTshirt(){
-  window.location.href = "customize.html";
+function openWhatsApp(){
+
+  const message =
+    "Hello SAHIL T SHIRT PRINTING 👋\n\nMujhe custom printing ke baare mein information chahiye.";
+
+  const url =
+    "https://wa.me/" +
+    whatsappNumber +
+    "?text=" +
+    encodeURIComponent(message);
+
+  window.location.href = url;
 }
+
+
+/* PRODUCTS */
+
+function openTshirt(){
+
+  window.location.href =
+    "customize.html";
+}
+
 
 function openMug(){
-  window.location.href = "mug.html";
+
+  window.location.href =
+    "mug.html";
 }
+
 
 function openGift(){
-  window.location.href = "gift.html";
+
+  window.location.href =
+    "gift.html";
 }
 
+
 function openCap(){
-  window.location.href = "cap.html";
+
+  window.location.href =
+    "cap.html";
 }
 
 
 /* CART */
+
 function openCart(){
 
   if(localStorage.getItem("cartItem")){
-    window.location.href = "cart.html";
-  }else{
-    alert("🛒 Cart abhi empty hai.");
-  }
 
+    window.location.href =
+      "cart.html";
+
+  }else{
+
+    alert("🛒 Cart abhi empty hai.");
+
+  }
 }
 
 
 /* ORDERS */
+
 function openOrders(){
 
-  if(localStorage.getItem("cartItem")){
-    window.location.href = "order.html";
-  }else{
-    alert("📦 Pehle koi product select karein.");
-  }
+  if(
+    localStorage.getItem("orderItem") ||
+    localStorage.getItem("finalOrder") ||
+    localStorage.getItem("cartItem")
+  ){
 
+    if(localStorage.getItem("orderItem")){
+
+      window.location.href =
+        "order.html";
+
+    }else{
+
+      window.location.href =
+        "cart.html";
+
+    }
+
+  }else{
+
+    alert("📦 Abhi koi order nahi hai.");
+
+  }
 }
 
 
 /* HOME */
+
 function goHome(){
+
   window.scrollTo({
     top:0,
     behavior:"smooth"
   });
+
 }
 
 
-/* WHATSAPP */
-function openWhatsApp(){
+/* PRODUCTS SCROLL */
 
-  const message =
-    "Hello SAHIL T SHIRT PRINTING 👋%0A%0A" +
-    "Mujhe custom printing ke baare mein information chahiye.";
+function scrollToProducts(){
 
-  window.open(
-    "https://wa.me/" + whatsappNumber + "?text=" + message,
-    "_blank"
-  );
+  document
+    .getElementById("productsSection")
+    .scrollIntoView({
+      behavior:"smooth"
+    });
 
 }
 
 
 /* SEARCH */
+
 function searchProducts(){
 
   const search =
     document
-      .getElementById("searchInput")
+      .getElementById("search")
       .value
       .toLowerCase()
       .trim();
@@ -638,22 +1416,65 @@ function searchProducts(){
   const products =
     document.querySelectorAll(".product");
 
+  let found = 0;
+
+
   products.forEach(function(product){
 
     const name =
-      product.getAttribute("data-name");
+      product
+        .getAttribute("data-name")
+        .toLowerCase();
 
-    if(name.includes(search)){
-      product.style.display = "block";
+    if(
+      search === "" ||
+      name.includes(search)
+    ){
+
+      product.style.display =
+        "block";
+
+      found++;
+
     }else{
-      product.style.display = "none";
+
+      product.style.display =
+        "none";
+
     }
 
   });
 
+
+  const noResult =
+    document.getElementById("noResult");
+
+
+  if(found === 0){
+
+    noResult.style.display =
+      "block";
+
+  }else{
+
+    noResult.style.display =
+      "none";
+
+  }
 }
 
-</script>
 
-</body>
-</html>
+/* CART COUNT */
+
+function updateCartCount(){
+
+  const hasCart =
+    localStorage.getItem("cartItem");
+
+
+  const headerCount =
+    document.getElementById(
+      "headerCartCount"
+    );
+
+  const n
